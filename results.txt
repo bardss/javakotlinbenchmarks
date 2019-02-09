@@ -1,0 +1,14 @@
+09.02.2019 18:37:01
+Fasta Kotlin Converted: 76031186
+Fasta Java: 100196285
+NBody Java: 4745352
+NBody Kotlin Converted: 7393827
+
+
+09.02.2019 18:37:20
+Fasta Kotlin Converted: 83338421
+Fasta Java: 64799591
+NBody Java: 2866939
+NBody Kotlin Converted: 2484676
+
+

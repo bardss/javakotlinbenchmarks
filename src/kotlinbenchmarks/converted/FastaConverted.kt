@@ -5,12 +5,11 @@
  * modified by Mehmet D. AKIN
  * modified by Daryl Griffith
  */
-package kotlinbenchmarks
+package kotlinbenchmarks.converted
 
 import java.io.IOException
 import java.io.OutputStream
 import java.util.concurrent.ArrayBlockingQueue
-import java.util.concurrent.BlockingQueue
 import java.util.concurrent.atomic.AtomicInteger
 
 object FastaConverted {
