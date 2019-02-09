@@ -32,12 +32,9 @@ object FastaConverted {
     internal var last = 42
 
     @JvmStatic
-    fun main(args: Array<String>) {
+    fun execute() {
         var n = 1000
 
-        if (args.size > 0) {
-            n = Integer.parseInt(args[0])
-        }
         for (i in WORKERS.indices) {
             WORKERS[i] = NucleotideSelector()
             WORKERS[i]?.setDaemon(true)
