@@ -42,3 +42,29 @@ Fasta Kotlin Converted: 67620877
 Fasta Java: 151490391
 
 
+10.02.2019 17:55:50
+Fasta Kotlin Converted: 71731589
+SpectralNorm Java: 177726026
+Fasta Java: 61481672
+FannkuchRedux Kotlin Converted: 2950104
+NBody Java: 2977836
+NBody Kotlin Converted: 5462469
+BinaryTrees Kotlin Converted: 10419543
+SpectralNorm Kotlin Converted: 19570961
+BinaryTrees Java: 160304270
+FannkuchRedux Java: 943312
+
+
+10.02.2019 17:59:21
+Fasta Kotlin Converted: 65515532
+SpectralNorm Java: 4450696894
+Fasta Java: 93359100
+FannkuchRedux Kotlin Converted: 3867320
+NBody Java: 7231917
+NBody Kotlin Converted: 4239069
+BinaryTrees Kotlin Converted: 6820780
+SpectralNorm Kotlin Converted: 3488018120
+BinaryTrees Java: 95946588
+FannkuchRedux Java: 1195716
+
+

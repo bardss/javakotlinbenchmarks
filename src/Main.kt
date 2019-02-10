@@ -22,6 +22,9 @@ object Main {
 //        benchmarkSuite.executeJavaRegexRedux()
 //        benchmarkSuite.executeKotlinConvertedRegexRedux()
 
+        benchmarkSuite.executeJavaSpectralNorm()
+        benchmarkSuite.executeKotlinConvertedSpectralNorm()
+
         val results = benchmarkSuite.results
         resultsWriter.writeResultsToFile(results)
     }
