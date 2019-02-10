@@ -37,3 +37,8 @@ BinaryTrees Kotlin Converted: 4909201
 BinaryTrees Java: 104295318
 
 
+10.02.2019 17:23:50
+Fasta Kotlin Converted: 67620877
+Fasta Java: 151490391
+
+

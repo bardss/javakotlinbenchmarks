@@ -18,6 +18,10 @@ object Main {
         benchmarkSuite.executeJavaBinaryTrees()
         benchmarkSuite.executeKotlinConvertedBinaryTrees()
 
+//        TODO: Uncomment when proper stream conversion in Kotlin and corrent input from Fasta
+//        benchmarkSuite.executeJavaRegexRedux()
+//        benchmarkSuite.executeKotlinConvertedRegexRedux()
+
         val results = benchmarkSuite.results
         resultsWriter.writeResultsToFile(results)
     }

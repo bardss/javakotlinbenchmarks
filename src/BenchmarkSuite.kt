@@ -1,11 +1,5 @@
-import javabenchmarks.BinaryTrees
-import javabenchmarks.FannkuchRedux
-import javabenchmarks.Fasta
-import javabenchmarks.NBody
-import kotlinbenchmarks.converted.BinaryTreesConverted
-import kotlinbenchmarks.converted.FannkuchReduxConverted
-import kotlinbenchmarks.converted.FastaConverted
-import kotlinbenchmarks.converted.NBodyConverted
+import javabenchmarks.*
+import kotlinbenchmarks.converted.*
 
 class BenchmarkSuite {
 
@@ -81,4 +75,21 @@ class BenchmarkSuite {
         results[key] = (endTime - startTime)
     }
 
+    fun executeJavaRegexRedux(){
+        val key = "RegexRedux Java"
+        val nbodyArgs = arrayOf("1")
+        val startTime = System.nanoTime()
+        RegexRedux.execute(nbodyArgs)
+        val endTime = System.nanoTime()
+        results[key] = (endTime - startTime)
+    }
+
+    fun executeKotlinConvertedRegexRedux(){
+        val key = "RegexRedux Kotlin Converted"
+        val nbodyArgs = arrayOf("1")
+        val startTime = System.nanoTime()
+        RegexReduxConverted.execute(nbodyArgs)
+        val endTime = System.nanoTime()
+        results[key] = (endTime - startTime)
+    }
 }
