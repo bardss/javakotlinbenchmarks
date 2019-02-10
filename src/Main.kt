@@ -8,8 +8,12 @@ object Main {
 
         benchmarkSuite.executeJavaFasta()
         benchmarkSuite.executeKotlinConvertedFasta()
+
         benchmarkSuite.executeJavaNBody()
         benchmarkSuite.executeKotlinConvertedNBody()
+
+        benchmarkSuite.executeJavaFannkuchRedux()
+        benchmarkSuite.executeKotlinConvertedFannkuchRedux()
 
         val results = benchmarkSuite.results
         resultsWriter.writeResultsToFile(results)

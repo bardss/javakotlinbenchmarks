@@ -1,5 +1,7 @@
+import javabenchmarks.FannkuchRedux
 import javabenchmarks.Fasta
 import javabenchmarks.NBody
+import kotlinbenchmarks.converted.FannkuchReduxConverted
 import kotlinbenchmarks.converted.FastaConverted
 import kotlinbenchmarks.converted.NBodyConverted
 
@@ -37,6 +39,24 @@ class BenchmarkSuite {
         val nbodyArgs = arrayOf("1")
         val startTime = System.nanoTime()
         NBodyConverted.execute(nbodyArgs)
+        val endTime = System.nanoTime()
+        results[key] = (endTime - startTime)
+    }
+
+    fun executeJavaFannkuchRedux(){
+        val key = "FannkuchRedux Java"
+        val nbodyArgs = arrayOf("1")
+        val startTime = System.nanoTime()
+        FannkuchRedux.execute(nbodyArgs)
+        val endTime = System.nanoTime()
+        results[key] = (endTime - startTime)
+    }
+
+    fun executeKotlinConvertedFannkuchRedux(){
+        val key = "FannkuchRedux Kotlin Converted"
+        val nbodyArgs = arrayOf("1")
+        val startTime = System.nanoTime()
+        FannkuchReduxConverted.execute(nbodyArgs)
         val endTime = System.nanoTime()
         results[key] = (endTime - startTime)
     }

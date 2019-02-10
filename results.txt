@@ -12,3 +12,12 @@ NBody Java: 2866939
 NBody Kotlin Converted: 2484676
 
 
+10.02.2019 10:49:11
+Fasta Kotlin Converted: 94119277
+Fasta Java: 94034800
+FannkuchRedux Kotlin Converted: 7267260
+NBody Java: 6986847
+NBody Kotlin Converted: 10108453
+FannkuchRedux Java: 2212585
+
+
