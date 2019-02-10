@@ -15,6 +15,9 @@ object Main {
         benchmarkSuite.executeJavaFannkuchRedux()
         benchmarkSuite.executeKotlinConvertedFannkuchRedux()
 
+        benchmarkSuite.executeJavaBinaryTrees()
+        benchmarkSuite.executeKotlinConvertedBinaryTrees()
+
         val results = benchmarkSuite.results
         resultsWriter.writeResultsToFile(results)
     }

@@ -21,3 +21,19 @@ NBody Kotlin Converted: 10108453
 FannkuchRedux Java: 2212585
 
 
+10.02.2019 10:57:30
+Fasta Kotlin Converted: 67476348
+Fasta Java: 66291874
+FannkuchRedux Kotlin Converted: 3516450
+NBody Java: 2823245
+NBody Kotlin Converted: 3626199
+BinaryTrees Kotlin Converted: 6651995
+BinaryTrees Java: 164161154
+FannkuchRedux Java: 1365568
+
+
+10.02.2019 10:58:31
+BinaryTrees Kotlin Converted: 4909201
+BinaryTrees Java: 104295318
+
+

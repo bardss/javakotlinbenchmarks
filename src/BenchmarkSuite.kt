@@ -1,6 +1,8 @@
+import javabenchmarks.BinaryTrees
 import javabenchmarks.FannkuchRedux
 import javabenchmarks.Fasta
 import javabenchmarks.NBody
+import kotlinbenchmarks.converted.BinaryTreesConverted
 import kotlinbenchmarks.converted.FannkuchReduxConverted
 import kotlinbenchmarks.converted.FastaConverted
 import kotlinbenchmarks.converted.NBodyConverted
@@ -57,6 +59,24 @@ class BenchmarkSuite {
         val nbodyArgs = arrayOf("1")
         val startTime = System.nanoTime()
         FannkuchReduxConverted.execute(nbodyArgs)
+        val endTime = System.nanoTime()
+        results[key] = (endTime - startTime)
+    }
+
+    fun executeJavaBinaryTrees(){
+        val key = "BinaryTrees Java"
+        val nbodyArgs = arrayOf("1")
+        val startTime = System.nanoTime()
+        BinaryTrees.execute(nbodyArgs)
+        val endTime = System.nanoTime()
+        results[key] = (endTime - startTime)
+    }
+
+    fun executeKotlinConvertedBinaryTrees(){
+        val key = "BinaryTrees Kotlin Converted"
+        val nbodyArgs = arrayOf("1")
+        val startTime = System.nanoTime()
+        BinaryTreesConverted.execute(nbodyArgs)
         val endTime = System.nanoTime()
         results[key] = (endTime - startTime)
     }
