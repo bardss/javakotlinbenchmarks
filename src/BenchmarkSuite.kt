@@ -4,8 +4,13 @@ import kotlinbenchmarks.converted.*
 class BenchmarkSuite {
 
     val results: HashMap<String, Long> = hashMapOf()
-    val inputNBody = arrayOf("50000000")
-    val inputFasta = arrayOf("25000000")
+    private val inputNBody = arrayOf("50000000")
+    private val inputFasta = arrayOf("25000000")
+    private val inputFannkuch = arrayOf("7")
+    private val inputBinaryTrees = arrayOf("21")
+    private val inputSpectralNorm = arrayOf("5500")
+    private val inputMandelbrot = arrayOf("16000")
+
 
     fun executeJavaFasta(){
         val key = "Fasta Java"
@@ -41,36 +46,32 @@ class BenchmarkSuite {
 
     fun executeJavaFannkuchRedux(){
         val key = "FannkuchRedux Java"
-        val args = arrayOf("1")
         val startTime = System.nanoTime()
-        FannkuchRedux.execute(args)
+        FannkuchRedux.execute(inputFannkuch)
         val endTime = System.nanoTime()
         results[key] = (endTime - startTime)
     }
 
     fun executeKotlinConvertedFannkuchRedux(){
         val key = "FannkuchRedux Kotlin Converted"
-        val args = arrayOf("1")
         val startTime = System.nanoTime()
-        FannkuchReduxConverted.execute(args)
+        FannkuchReduxConverted.execute(inputFannkuch)
         val endTime = System.nanoTime()
         results[key] = (endTime - startTime)
     }
 
     fun executeJavaBinaryTrees(){
         val key = "BinaryTrees Java"
-        val args = arrayOf("1")
         val startTime = System.nanoTime()
-        BinaryTrees.execute(args)
+        BinaryTrees.execute(inputBinaryTrees)
         val endTime = System.nanoTime()
         results[key] = (endTime - startTime)
     }
 
     fun executeKotlinConvertedBinaryTrees(){
         val key = "BinaryTrees Kotlin Converted"
-        val args = arrayOf("1")
         val startTime = System.nanoTime()
-        BinaryTreesConverted.execute(args)
+        BinaryTreesConverted.execute(inputBinaryTrees)
         val endTime = System.nanoTime()
         results[key] = (endTime - startTime)
     }
@@ -95,36 +96,32 @@ class BenchmarkSuite {
 
     fun executeJavaSpectralNorm(){
         val key = "SpectralNorm Java"
-        val args = arrayOf("5500")
         val startTime = System.nanoTime()
-        SpectralNorm.execute(args)
+        SpectralNorm.execute(inputSpectralNorm)
         val endTime = System.nanoTime()
         results[key] = (endTime - startTime)
     }
 
     fun executeKotlinConvertedSpectralNorm(){
         val key = "SpectralNorm Kotlin Converted"
-        val args = arrayOf("5500")
         val startTime = System.nanoTime()
-        SpectralNormConverted.execute(args)
+        SpectralNormConverted.execute(inputSpectralNorm)
         val endTime = System.nanoTime()
         results[key] = (endTime - startTime)
     }
 
     fun executeJavaMandelbrot(){
         val key = "Mandelbrot Java"
-        val args = arrayOf("1")
         val startTime = System.nanoTime()
-        Mandelbrot.execute(args)
+        Mandelbrot.execute(inputMandelbrot)
         val endTime = System.nanoTime()
         results[key] = (endTime - startTime)
     }
 
     fun executeKotlinConvertedMandelbrot(){
         val key = "Mandelbrot Kotlin Converted"
-        val args = arrayOf("1")
         val startTime = System.nanoTime()
-        MandelbrotConverted.execute(args)
+        MandelbrotConverted.execute(inputMandelbrot)
         val endTime = System.nanoTime()
         results[key] = (endTime - startTime)
     }

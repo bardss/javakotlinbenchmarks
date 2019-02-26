@@ -101,3 +101,61 @@ Fasta Java: 150647417
 Fasta Kotlin Converted: 111179186
 
 
+26.02.2019 12:39:02
+FannkuchRedux Kotlin Converted: 11774494
+FannkuchRedux Java: 5901600
+
+
+26.02.2019 12:42:44
+FannkuchRedux Kotlin Converted: 3643839
+FannkuchRedux Java: 6803574
+
+
+26.02.2019 12:43:29
+FannkuchRedux Kotlin Converted: 17513452
+
+
+26.02.2019 16:58:06
+FannkuchRedux Kotlin Converted: 10769622
+
+
+26.02.2019 16:59:25
+FannkuchRedux Java: 6011098
+
+
+26.02.2019 17:00:57
+FannkuchRedux Java: 11774921
+
+
+26.02.2019 17:01:05
+FannkuchRedux Kotlin Converted: 8888489
+
+
+26.02.2019 17:01:18
+FannkuchRedux Kotlin Converted: 5524367
+FannkuchRedux Java: 5895385
+
+
+26.02.2019 17:13:41
+BinaryTrees Kotlin Converted: 13365992
+BinaryTrees Java: 106967258
+
+
+26.02.2019 17:18:58
+SpectralNorm Java: 43742446
+SpectralNorm Kotlin Converted: 16253853
+
+
+26.02.2019 17:23:14
+Mandelbrot Java: 14424427
+
+
+26.02.2019 17:25:14
+Mandelbrot Kotlin Converted: 26857039
+
+
+26.02.2019 17:26:14
+Mandelbrot Kotlin Converted: 6772833416
+Mandelbrot Java: 9141750100
+
+

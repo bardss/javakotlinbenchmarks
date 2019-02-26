@@ -8,7 +8,6 @@ package kotlinbenchmarks.converted
  *
  */
 
-import javabenchmarks.FannkuchRedux
 import java.util.concurrent.atomic.AtomicInteger
 
 class FannkuchReduxConverted : Runnable {
@@ -165,7 +164,7 @@ class FannkuchReduxConverted : Runnable {
             val nthreads = Runtime.getRuntime().availableProcessors()
             val threads = arrayOfNulls<Thread>(nthreads)
             for (i in 0 until nthreads) {
-                threads[i] = Thread(FannkuchRedux())
+                threads[i] = Thread(FannkuchReduxConverted())
                 threads[i]!!.start()
             }
             for (t in threads) {
