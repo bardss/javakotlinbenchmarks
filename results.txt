@@ -68,3 +68,18 @@ BinaryTrees Java: 95946588
 FannkuchRedux Java: 1195716
 
 
+12.02.2019 19:16:50
+Fasta Kotlin Converted: 77254578
+SpectralNorm Java: 4506899637
+Fasta Java: 277343025
+FannkuchRedux Kotlin Converted: 2650773
+NBody Java: 5979409
+NBody Kotlin Converted: 8357111
+Mandelbrot Kotlin Converted: 2243474
+BinaryTrees Kotlin Converted: 7499836
+Mandelbrot Java: 3443114
+SpectralNorm Kotlin Converted: 3545550945
+BinaryTrees Java: 212312189
+FannkuchRedux Java: 3302744
+
+

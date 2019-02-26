@@ -25,6 +25,12 @@ object Main {
         benchmarkSuite.executeJavaSpectralNorm()
         benchmarkSuite.executeKotlinConvertedSpectralNorm()
 
+        benchmarkSuite.executeJavaMandelbrot()
+        benchmarkSuite.executeKotlinConvertedMandelbrot()
+
+        benchmarkSuite.executeJavaPidigits()
+        benchmarkSuite.executeKotlinConvertedPidigits()
+
         val results = benchmarkSuite.results
         resultsWriter.writeResultsToFile(results)
     }

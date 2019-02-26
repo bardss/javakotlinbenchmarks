@@ -110,4 +110,40 @@ class BenchmarkSuite {
         val endTime = System.nanoTime()
         results[key] = (endTime - startTime)
     }
+
+    fun executeJavaMandelbrot(){
+        val key = "Mandelbrot Java"
+        val args = arrayOf("1")
+        val startTime = System.nanoTime()
+        Mandelbrot.execute(args)
+        val endTime = System.nanoTime()
+        results[key] = (endTime - startTime)
+    }
+
+    fun executeKotlinConvertedMandelbrot(){
+        val key = "Mandelbrot Kotlin Converted"
+        val args = arrayOf("1")
+        val startTime = System.nanoTime()
+        MandelbrotConverted.execute(args)
+        val endTime = System.nanoTime()
+        results[key] = (endTime - startTime)
+    }
+
+    fun executeJavaPidigits(){
+        val key = "Pidigits Java"
+        val args = arrayOf("10000")
+        val startTime = System.nanoTime()
+        Pidigits.execute(args)
+        val endTime = System.nanoTime()
+        results[key] = (endTime - startTime)
+    }
+
+    fun executeKotlinConvertedPidigits(){
+        val key = "Pidigits Kotlin Converted"
+        val args = arrayOf("10000")
+        val startTime = System.nanoTime()
+        PidigitsConverted.execute(args)
+        val endTime = System.nanoTime()
+        results[key] = (endTime - startTime)
+    }
 }
