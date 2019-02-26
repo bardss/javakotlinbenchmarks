@@ -31,9 +31,12 @@ public class Fasta {
     static final float ONE_OVER_IM = 1f / IM;
     static int last = 42;
 
-    public static void execute() {
+    public static void execute(String[] args) {
         int n = 1000;
 
+        if (args.length > 0) {
+            n = Integer.parseInt(args[0]);
+        }
         for (int i = 0; i < WORKERS.length; i++) {
             WORKERS[i] = new NucleotideSelector();
             WORKERS[i].setDaemon(true);

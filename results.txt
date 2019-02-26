@@ -83,3 +83,21 @@ BinaryTrees Java: 212312189
 FannkuchRedux Java: 3302744
 
 
+26.02.2019 11:40:39
+NBody Java: 36359712
+NBody Kotlin Converted: 14744916
+
+
+26.02.2019 11:51:16
+NBody Java: 7522268800
+NBody Kotlin Converted: 7377416728
+
+
+26.02.2019 12:00:48
+Fasta Java: 150647417
+
+
+26.02.2019 12:03:02
+Fasta Kotlin Converted: 111179186
+
+

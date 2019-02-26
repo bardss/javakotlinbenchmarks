@@ -4,11 +4,13 @@ import kotlinbenchmarks.converted.*
 class BenchmarkSuite {
 
     val results: HashMap<String, Long> = hashMapOf()
+    val inputNBody = arrayOf("50000000")
+    val inputFasta = arrayOf("25000000")
 
     fun executeJavaFasta(){
         val key = "Fasta Java"
         val startTime = System.nanoTime()
-        Fasta.execute()
+        Fasta.execute(inputFasta)
         val endTime = System.nanoTime()
         results[key] = (endTime - startTime)
     }
@@ -16,25 +18,23 @@ class BenchmarkSuite {
     fun executeKotlinConvertedFasta(){
         val key = "Fasta Kotlin Converted"
         val startTime = System.nanoTime()
-        FastaConverted.execute()
+        FastaConverted.execute(inputFasta)
         val endTime = System.nanoTime()
         results[key] = (endTime - startTime)
     }
 
     fun executeJavaNBody(){
         val key = "NBody Java"
-        val args = arrayOf("1")
         val startTime = System.nanoTime()
-        NBody.execute(args)
+        NBody.execute(inputNBody)
         val endTime = System.nanoTime()
         results[key] = (endTime - startTime)
     }
 
     fun executeKotlinConvertedNBody(){
         val key = "NBody Kotlin Converted"
-        val args = arrayOf("1")
         val startTime = System.nanoTime()
-        NBodyConverted.execute(args)
+        NBodyConverted.execute(inputNBody)
         val endTime = System.nanoTime()
         results[key] = (endTime - startTime)
     }
@@ -129,21 +129,4 @@ class BenchmarkSuite {
         results[key] = (endTime - startTime)
     }
 
-    fun executeJavaPidigits(){
-        val key = "Pidigits Java"
-        val args = arrayOf("10000")
-        val startTime = System.nanoTime()
-        Pidigits.execute(args)
-        val endTime = System.nanoTime()
-        results[key] = (endTime - startTime)
-    }
-
-    fun executeKotlinConvertedPidigits(){
-        val key = "Pidigits Kotlin Converted"
-        val args = arrayOf("10000")
-        val startTime = System.nanoTime()
-        PidigitsConverted.execute(args)
-        val endTime = System.nanoTime()
-        results[key] = (endTime - startTime)
-    }
 }
