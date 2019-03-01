@@ -21,7 +21,7 @@ object RegexReduxConverted {
 
     @Throws(IOException::class)
     @JvmStatic
-    fun execute(args: Array<String>) {
+    fun execute() {
         val baos = ByteArrayOutputStream()
         run {
             val buf = ByteArray(65536)

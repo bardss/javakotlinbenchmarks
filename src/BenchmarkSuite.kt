@@ -78,18 +78,16 @@ class BenchmarkSuite {
 
     fun executeJavaRegexRedux(){
         val key = "RegexRedux Java"
-        val args = arrayOf("1")
         val startTime = System.nanoTime()
-        RegexRedux.execute(args)
+        RegexRedux.execute()
         val endTime = System.nanoTime()
         results[key] = (endTime - startTime)
     }
 
     fun executeKotlinConvertedRegexRedux(){
         val key = "RegexRedux Kotlin Converted"
-        val args = arrayOf("1")
         val startTime = System.nanoTime()
-        RegexReduxConverted.execute(args)
+        RegexReduxConverted.execute()
         val endTime = System.nanoTime()
         results[key] = (endTime - startTime)
     }
