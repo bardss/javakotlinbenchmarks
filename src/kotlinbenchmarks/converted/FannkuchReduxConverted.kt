@@ -138,7 +138,7 @@ class FannkuchReduxConverted : Runnable {
         }
 
         @JvmStatic
-        fun execute(args: Array<String>) {
+        fun main(args: Array<String>) {
             n = if (args.size > 0) Integer.parseInt(args[0]) else 12
             if (n < 0 || n > 12) {         // 13! won't fit into int
                 printResult(n, -1, -1)

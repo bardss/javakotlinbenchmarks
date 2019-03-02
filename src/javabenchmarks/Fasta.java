@@ -31,7 +31,7 @@ public class Fasta {
     static final float ONE_OVER_IM = 1f / IM;
     static int last = 42;
 
-    public static void execute(String[] args) {
+    public static void main(String[] args) {
         int n = 1000;
 
         if (args.length > 0) {

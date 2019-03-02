@@ -125,7 +125,7 @@ public final class FannkuchRedux implements Runnable {
         System.out.println(chk + "\nPfannkuchen(" + n + ") = " + res);
     }
 
-    public static void execute(String[] args) {
+    public static void main(String[] args) {
         n = args.length > 0 ? Integer.parseInt(args[0]) : 12;
         if (n < 0 || n > 12) {         // 13! won't fit into int
             printResult(n, -1, -1);

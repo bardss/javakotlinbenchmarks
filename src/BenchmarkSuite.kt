@@ -15,7 +15,7 @@ class BenchmarkSuite {
     fun executeJavaFasta(){
         val key = "Fasta Java"
         val startTime = System.nanoTime()
-        Fasta.execute(inputFasta)
+        Fasta.main(inputFasta)
         val endTime = System.nanoTime()
         results[key] = (endTime - startTime)
     }
@@ -23,7 +23,7 @@ class BenchmarkSuite {
     fun executeKotlinConvertedFasta(){
         val key = "Fasta Kotlin Converted"
         val startTime = System.nanoTime()
-        FastaConverted.execute(inputFasta)
+        FastaConverted.main(inputFasta)
         val endTime = System.nanoTime()
         results[key] = (endTime - startTime)
     }
@@ -31,7 +31,7 @@ class BenchmarkSuite {
     fun executeJavaNBody(){
         val key = "NBody Java"
         val startTime = System.nanoTime()
-        NBody.execute(inputNBody)
+        NBody.main(inputNBody)
         val endTime = System.nanoTime()
         results[key] = (endTime - startTime)
     }
@@ -39,7 +39,7 @@ class BenchmarkSuite {
     fun executeKotlinConvertedNBody(){
         val key = "NBody Kotlin Converted"
         val startTime = System.nanoTime()
-        NBodyConverted.execute(inputNBody)
+        NBodyConverted.main(inputNBody)
         val endTime = System.nanoTime()
         results[key] = (endTime - startTime)
     }
@@ -47,7 +47,7 @@ class BenchmarkSuite {
     fun executeJavaFannkuchRedux(){
         val key = "FannkuchRedux Java"
         val startTime = System.nanoTime()
-        FannkuchRedux.execute(inputFannkuch)
+        FannkuchRedux.main(inputFannkuch)
         val endTime = System.nanoTime()
         results[key] = (endTime - startTime)
     }
@@ -55,7 +55,7 @@ class BenchmarkSuite {
     fun executeKotlinConvertedFannkuchRedux(){
         val key = "FannkuchRedux Kotlin Converted"
         val startTime = System.nanoTime()
-        FannkuchReduxConverted.execute(inputFannkuch)
+        FannkuchReduxConverted.main(inputFannkuch)
         val endTime = System.nanoTime()
         results[key] = (endTime - startTime)
     }
@@ -63,7 +63,7 @@ class BenchmarkSuite {
     fun executeJavaBinaryTrees(){
         val key = "BinaryTrees Java"
         val startTime = System.nanoTime()
-        BinaryTrees.execute(inputBinaryTrees)
+        BinaryTrees.main(inputBinaryTrees)
         val endTime = System.nanoTime()
         results[key] = (endTime - startTime)
     }
@@ -71,7 +71,7 @@ class BenchmarkSuite {
     fun executeKotlinConvertedBinaryTrees(){
         val key = "BinaryTrees Kotlin Converted"
         val startTime = System.nanoTime()
-        BinaryTreesConverted.execute(inputBinaryTrees)
+        BinaryTreesConverted.main(inputBinaryTrees)
         val endTime = System.nanoTime()
         results[key] = (endTime - startTime)
     }
@@ -79,7 +79,7 @@ class BenchmarkSuite {
     fun executeJavaRegexRedux(){
         val key = "RegexRedux Java"
         val startTime = System.nanoTime()
-        RegexRedux.execute()
+        RegexRedux.main()
         val endTime = System.nanoTime()
         results[key] = (endTime - startTime)
     }
@@ -87,7 +87,7 @@ class BenchmarkSuite {
     fun executeKotlinConvertedRegexRedux(){
         val key = "RegexRedux Kotlin Converted"
         val startTime = System.nanoTime()
-        RegexReduxConverted.execute()
+        RegexReduxConverted.main()
         val endTime = System.nanoTime()
         results[key] = (endTime - startTime)
     }
@@ -95,7 +95,7 @@ class BenchmarkSuite {
     fun executeJavaSpectralNorm(){
         val key = "SpectralNorm Java"
         val startTime = System.nanoTime()
-        SpectralNorm.execute(inputSpectralNorm)
+        SpectralNorm.main(inputSpectralNorm)
         val endTime = System.nanoTime()
         results[key] = (endTime - startTime)
     }
@@ -103,7 +103,7 @@ class BenchmarkSuite {
     fun executeKotlinConvertedSpectralNorm(){
         val key = "SpectralNorm Kotlin Converted"
         val startTime = System.nanoTime()
-        SpectralNormConverted.execute(inputSpectralNorm)
+        SpectralNormConverted.main(inputSpectralNorm)
         val endTime = System.nanoTime()
         results[key] = (endTime - startTime)
     }
@@ -111,7 +111,7 @@ class BenchmarkSuite {
     fun executeJavaMandelbrot(){
         val key = "Mandelbrot Java"
         val startTime = System.nanoTime()
-        Mandelbrot.execute(inputMandelbrot)
+        Mandelbrot.main(inputMandelbrot)
         val endTime = System.nanoTime()
         results[key] = (endTime - startTime)
     }
@@ -119,7 +119,7 @@ class BenchmarkSuite {
     fun executeKotlinConvertedMandelbrot(){
         val key = "Mandelbrot Kotlin Converted"
         val startTime = System.nanoTime()
-        MandelbrotConverted.execute(inputMandelbrot)
+        MandelbrotConverted.main(inputMandelbrot)
         val endTime = System.nanoTime()
         results[key] = (endTime - startTime)
     }

@@ -19,7 +19,7 @@ import static java.util.stream.Collectors.*;
 
 public class RegexRedux {
 
-    public static void execute() throws IOException {
+    public static void main(String[] args) throws IOException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         {
             byte[] buf = new byte[65536];

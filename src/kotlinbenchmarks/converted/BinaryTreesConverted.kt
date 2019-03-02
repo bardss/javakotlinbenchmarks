@@ -19,7 +19,7 @@ object BinaryTreesConverted {
 
     @Throws(Exception::class)
     @JvmStatic
-    fun execute(args: Array<String>) {
+    fun main(args: Array<String>) {
         var n = 0
         if (0 < args.size) {
             n = Integer.parseInt(args[0])

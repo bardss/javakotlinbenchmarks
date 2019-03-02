@@ -21,7 +21,7 @@ object RegexReduxConverted {
 
     @Throws(IOException::class)
     @JvmStatic
-    fun execute() {
+    fun main() {
         val baos = ByteArrayOutputStream()
         run {
             val buf = ByteArray(65536)
@@ -75,6 +75,7 @@ object RegexReduxConverted {
 //                .collect<Map<String, Long>, Any>(
 //                        toMap(
 //                                Function<Entry<String, Long>, String> { it.key },
+//                                *,
 //                                Function<Entry<String, Long>, String> { it.value }
 //                        ))
 //

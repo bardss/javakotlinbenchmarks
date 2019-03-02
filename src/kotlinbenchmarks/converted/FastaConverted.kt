@@ -31,7 +31,7 @@ object FastaConverted {
     internal var last = 42
 
     @JvmStatic
-    fun execute(args: Array<String>) {
+    fun main(args: Array<String>) {
         var n = 1000
 
         if (args.size > 0) {

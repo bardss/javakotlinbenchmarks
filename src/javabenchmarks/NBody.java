@@ -9,7 +9,7 @@ package javabenchmarks;
 */
 
 public final class NBody {
-    public static void execute(String[] args) {
+    public static void main(String[] args) {
         int n = Integer.parseInt(args[0]);
 
         NBodySystem bodies = new NBodySystem();

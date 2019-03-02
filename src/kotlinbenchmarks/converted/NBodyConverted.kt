@@ -11,7 +11,7 @@ package kotlinbenchmarks.converted
 
 object NBodyConverted {
     @JvmStatic
-    fun execute(args: Array<String>) {
+    fun main(args: Array<String>) {
         val n = Integer.parseInt(args[0])
 
         val bodies = NBodySystem()
