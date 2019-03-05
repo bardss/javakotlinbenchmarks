@@ -12,14 +12,14 @@ package kotlinbenchmarks.converted
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
 
-object BinaryTreesConverted {
+object BinaryTreesConv {
 
     private val MIN_DEPTH = 4
     private val EXECUTOR_SERVICE = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors())
 
     @Throws(Exception::class)
     @JvmStatic
-    fun main(args: Array<String>) {
+    fun execute(args: Array<String>) {
         var n = 0
         if (0 < args.size) {
             n = Integer.parseInt(args[0])

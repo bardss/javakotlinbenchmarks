@@ -10,7 +10,7 @@ package kotlinbenchmarks.converted
 
 import java.util.concurrent.atomic.AtomicInteger
 
-class FannkuchReduxConverted : Runnable {
+class FannkuchReduxConv : Runnable {
 
     internal var p: IntArray = intArrayOf()
     internal var pp: IntArray = intArrayOf()
@@ -138,7 +138,7 @@ class FannkuchReduxConverted : Runnable {
         }
 
         @JvmStatic
-        fun main(args: Array<String>) {
+        fun execute(args: Array<String>) {
             n = if (args.size > 0) Integer.parseInt(args[0]) else 12
             if (n < 0 || n > 12) {         // 13! won't fit into int
                 printResult(n, -1, -1)
@@ -164,7 +164,7 @@ class FannkuchReduxConverted : Runnable {
             val nthreads = Runtime.getRuntime().availableProcessors()
             val threads = arrayOfNulls<Thread>(nthreads)
             for (i in 0 until nthreads) {
-                threads[i] = Thread(FannkuchReduxConverted())
+                threads[i] = Thread(FannkuchReduxConv())
                 threads[i]!!.start()
             }
             for (t in threads) {

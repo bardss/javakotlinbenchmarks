@@ -13,11 +13,11 @@ import java.text.DecimalFormat
 import java.text.NumberFormat
 import java.util.concurrent.CyclicBarrier
 
-object SpectralNormConverted {
+object SpectralNormConv {
     private val formatter = DecimalFormat("#.000000000")
 
     @JvmStatic
-    fun main(args: Array<String>) {
+    fun execute(args: Array<String>) {
         var n = 1000
         if (args.size > 0) n = Integer.parseInt(args[0])
 

@@ -9,9 +9,9 @@ package kotlinbenchmarks.converted
    modified slightly by Tagir Valeev
 */
 
-object NBodyConverted {
+object NBodyConv {
     @JvmStatic
-    fun main(args: Array<String>) {
+    fun execute(args: Array<String>) {
         val n = Integer.parseInt(args[0])
 
         val bodies = NBodySystem()

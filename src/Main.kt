@@ -1,3 +1,4 @@
+import resultswriter.ResultsWriter
 
 object Main {
 
@@ -17,10 +18,6 @@ object Main {
 
         benchmarkSuite.executeJavaBinaryTrees()
         benchmarkSuite.executeKotlinConvertedBinaryTrees()
-
-//        TODO: Uncomment when proper stream conversion in Kotlin and corrent input from Fasta
-//        benchmarkSuite.executeJavaRegexRedux()
-//        benchmarkSuite.executeKotlinConvertedRegexRedux()
 
         benchmarkSuite.executeJavaSpectralNorm()
         benchmarkSuite.executeKotlinConvertedSpectralNorm()

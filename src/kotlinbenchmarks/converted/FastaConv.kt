@@ -12,7 +12,7 @@ import java.io.OutputStream
 import java.util.concurrent.ArrayBlockingQueue
 import java.util.concurrent.atomic.AtomicInteger
 
-object FastaConverted {
+object FastaConv {
 
     internal val LINE_LENGTH = 60
     internal val LINE_COUNT = 1024
@@ -31,7 +31,7 @@ object FastaConverted {
     internal var last = 42
 
     @JvmStatic
-    fun main(args: Array<String>) {
+    fun execute(args: Array<String>) {
         var n = 1000
 
         if (args.size > 0) {

@@ -1,0 +1,6 @@
+All results in nanoseconds
+
+05.03.2019 11:58:17
+BinaryTrees Kotlin Converted: 6318695097
+
+

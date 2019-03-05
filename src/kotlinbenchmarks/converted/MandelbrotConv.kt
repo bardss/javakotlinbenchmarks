@@ -15,7 +15,7 @@ package kotlinbenchmarks.converted
 import java.io.*
 import java.util.concurrent.atomic.*
 
-object MandelbrotConverted {
+object MandelbrotConv {
     internal var out: Array<ByteArray> = arrayOf()
     internal var yCt: AtomicInteger = AtomicInteger()
     internal var Crb: DoubleArray = doubleArrayOf()
@@ -66,7 +66,7 @@ object MandelbrotConverted {
 
     @Throws(Exception::class)
     @JvmStatic
-    fun main(args: Array<String>) {
+    fun execute(args: Array<String>) {
         var N = 6000
         if (args.size >= 1) N = Integer.parseInt(args[0])
 
