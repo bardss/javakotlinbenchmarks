@@ -1,4 +1,4 @@
-package javabenchmarks;
+package javabenchmarks.mandelbrot;
 
 /* The Computer Language Benchmarks Game
  * https://salsa.debian.org/benchmarksgame-team/benchmarksgame/
@@ -53,7 +53,7 @@ public final class Mandelbrot {
             line[xb]=(byte)getByte(xb*8,y);
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void execute(String[] args) throws Exception {
         int N=6000;
         if (args.length>=1) N=Integer.parseInt(args[0]);
 

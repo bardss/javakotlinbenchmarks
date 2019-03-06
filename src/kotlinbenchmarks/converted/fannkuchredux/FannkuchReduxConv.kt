@@ -1,4 +1,4 @@
-package kotlinbenchmarks.converted
+package kotlinbenchmarks.converted.fannkuchredux
 
 /*
  * The Computer Language Benchmarks Game

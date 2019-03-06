@@ -1,4 +1,4 @@
-package javabenchmarks;
+package javabenchmarks.spectralnorm;
 
 /*
 The Computer Language Benchmarks Game
@@ -16,7 +16,7 @@ import java.util.concurrent.CyclicBarrier;
 public class SpectralNorm {
     private static final NumberFormat formatter = new DecimalFormat("#.000000000");
 
-    public static void main(String[] args) {
+    public static void execute(String[] args) {
         int n = 1000;
         if (args.length > 0) n = Integer.parseInt(args[0]);
 

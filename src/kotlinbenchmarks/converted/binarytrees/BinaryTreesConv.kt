@@ -1,4 +1,4 @@
-package kotlinbenchmarks.converted
+package kotlinbenchmarks.converted.binarytrees
 
 /**
  * The Computer Language Benchmarks Game

@@ -1,11 +1,11 @@
-import resultswriter.ResultsWriter
+import resultswriter.ResultsWriterKt
 
 object Main {
 
     @JvmStatic
     fun main(args: Array<String>) {
         val benchmarkSuite = BenchmarkSuite()
-        val resultsWriter = ResultsWriter()
+        val resultsWriter = ResultsWriterKt()
 
         benchmarkSuite.executeJavaFasta()
         benchmarkSuite.executeKotlinConvertedFasta()

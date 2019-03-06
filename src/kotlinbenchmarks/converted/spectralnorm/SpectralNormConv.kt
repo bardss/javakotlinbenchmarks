@@ -1,4 +1,4 @@
-package kotlinbenchmarks.converted
+package kotlinbenchmarks.converted.spectralnorm
 
 /*
 The Computer Language Benchmarks Game
@@ -10,7 +10,6 @@ Parallel by The Anh Tran
  */
 
 import java.text.DecimalFormat
-import java.text.NumberFormat
 import java.util.concurrent.CyclicBarrier
 
 object SpectralNormConv {

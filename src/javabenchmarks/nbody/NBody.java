@@ -1,4 +1,4 @@
-package javabenchmarks;
+package javabenchmarks.nbody;
 /* The Computer Language Benchmarks Game
    https://salsa.debian.org/benchmarksgame-team/benchmarksgame/
 
@@ -9,7 +9,7 @@ package javabenchmarks;
 */
 
 public final class NBody {
-    public static void main(String[] args) {
+    public static void execute(String[] args) {
         int n = Integer.parseInt(args[0]);
 
         NBodySystem bodies = new NBodySystem();

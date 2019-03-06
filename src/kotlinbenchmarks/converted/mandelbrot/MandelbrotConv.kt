@@ -1,4 +1,4 @@
-package kotlinbenchmarks.converted
+package kotlinbenchmarks.converted.mandelbrot
 
 /* The Computer Language Benchmarks Game
  * https://salsa.debian.org/benchmarksgame-team/benchmarksgame/

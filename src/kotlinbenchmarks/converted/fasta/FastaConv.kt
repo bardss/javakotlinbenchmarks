@@ -5,7 +5,7 @@
  * modified by Mehmet D. AKIN
  * modified by Daryl Griffith
  */
-package kotlinbenchmarks.converted
+package kotlinbenchmarks.converted.fasta
 
 import java.io.IOException
 import java.io.OutputStream

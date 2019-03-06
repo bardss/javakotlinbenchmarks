@@ -1,4 +1,4 @@
-package javabenchmarks;
+package javabenchmarks.binarytrees;
 
 /**
  * The Computer Language Benchmarks Game
@@ -19,7 +19,7 @@ public class BinaryTrees {
     private static final ExecutorService EXECUTOR_SERVICE =
             Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
 
-    public static void main(final String[] args) throws Exception {
+    public static void execute(final String[] args) throws Exception {
         int n = 0;
         if (0 < args.length) {
             n = Integer.parseInt(args[0]);

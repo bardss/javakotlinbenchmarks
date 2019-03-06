@@ -7,7 +7,7 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 
-class ResultsWriter {
+class ResultsWriterKt {
 
     private val resultsFileName = "results.txt"
 

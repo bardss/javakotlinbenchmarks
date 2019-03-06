@@ -5,7 +5,7 @@
  * modified by Mehmet D. AKIN
  * modified by Daryl Griffith
  */
-package javabenchmarks;
+package javabenchmarks.fasta;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -31,7 +31,7 @@ public class Fasta {
     static final float ONE_OVER_IM = 1f / IM;
     static int last = 42;
 
-    public static void main(String[] args) {
+    public static void execute(String[] args) {
         int n = 1000;
 
         if (args.length > 0) {
