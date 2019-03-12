@@ -18,17 +18,17 @@ echo ' - Compile Fasta Java'
 javac javabenchmarks/fasta/*.java
 jar -cf generated/FastaJavaBenchmark.jar javabenchmarks/fasta/*.class resultswriter/ResultsWriterJava.class
 
-# echo ' - Compile Mandelbrot Java'
-# javac javabenchmarks/mandelbrot/*.java
-# jar -cf generated/MandelbrotJavaBenchmark.jar javabenchmarks/mandelbrot/*.class resultswriter/ResultsWriterJava.class
+echo ' - Compile Mandelbrot Java'
+javac javabenchmarks/mandelbrot/*.java
+jar -cf generated/MandelbrotJavaBenchmark.jar javabenchmarks/mandelbrot/*.class resultswriter/ResultsWriterJava.class
 
-# echo ' - Compile NBody Java'
-# javac javabenchmarks/nbody/*.java
-# jar -cf generated/NBodyJavaBenchmark.jar javabenchmarks/nbody/*.class resultswriter/ResultsWriterJava.class
+echo ' - Compile NBody Java'
+javac javabenchmarks/nbody/*.java
+jar -cf generated/NBodyJavaBenchmark.jar javabenchmarks/nbody/*.class resultswriter/ResultsWriterJava.class
 
-# echo ' - Compile Spectral Norm Java'
-# javac javabenchmarks/spectralnorm/*.java
-# jar -cf generated/SpectralNormJavaBenchmark.jar javabenchmarks/spectralnorm/*.class resultswriter/ResultsWriterJava.class
+echo ' - Compile Spectral Norm Java'
+javac javabenchmarks/spectralnorm/*.java
+jar -cf generated/SpectralNormJavaBenchmark.jar javabenchmarks/spectralnorm/*.class resultswriter/ResultsWriterJava.class
 
 
 echo 'Compiling Kotlin benchmarks'
@@ -42,22 +42,15 @@ kotlinc -include-runtime -d generated/FannkuchReduxKtConvBenchmark.jar kotlinben
 echo ' - Compile Fasta Kt Converted'
 kotlinc -include-runtime -d generated/FastaKtConvBenchmark.jar kotlinbenchmarks/converted/fasta/*.kt resultswriter/ResultsWriterKt.kt
 
-# echo ' - Compile Mandelbrot Kt Converted'
-# kotlinc -include-runtime -d generated/MandelbrotKtConvBenchmark.jar kotlinbenchmarks/converted/mandelbrot/*.kt resultswriter/ResultsWriterKt.kt
+echo ' - Compile Mandelbrot Kt Converted'
+kotlinc -include-runtime -d generated/MandelbrotKtConvBenchmark.jar kotlinbenchmarks/converted/mandelbrot/*.kt resultswriter/ResultsWriterKt.kt
 
-# echo ' - Compile NBody Kt Converted'
-# kotlinc -include-runtime -d generated/NBodyKtConvBenchmark.jar kotlinbenchmarks/converted/nbody/*.kt resultswriter/ResultsWriterKt.kt
+echo ' - Compile NBody Kt Converted'
+kotlinc -include-runtime -d generated/NBodyKtConvBenchmark.jar kotlinbenchmarks/converted/nbody/*.kt resultswriter/ResultsWriterKt.kt
 
-# echo ' - Compile Spectral Norm Kt Converted'
-# kotlinc -include-runtime -d generated/SpectralNormKtConvBenchmark.jar kotlinbenchmarks/converted/spectralnorm/*.kt resultswriter/ResultsWriterKt.kt
+echo ' - Compile Spectral Norm Kt Converted'
+kotlinc -include-runtime -d generated/SpectralNormKtConvBenchmark.jar kotlinbenchmarks/converted/spectralnorm/*.kt resultswriter/ResultsWriterKt.kt
 
-echo 'Warmup Binary Trees Kotlin'
-java -cp generated/BinaryTreesJavaBenchmark.jar javabenchmarks.binarytrees.BinaryTreesExec 21 warmup
-java -cp generated/BinaryTreesJavaBenchmark.jar javabenchmarks.binarytrees.BinaryTreesExec 21 warmup
-java -cp generated/BinaryTreesJavaBenchmark.jar javabenchmarks.binarytrees.BinaryTreesExec 21 warmup
-
-echo 'Executing Binary Trees Kotlin benchmark'
-java -cp generated/BinaryTreesJavaBenchmark.jar javabenchmarks.binarytrees.BinaryTreesExec 21 benchmark
 
 echo 'Warmup Binary Trees Java'
 java -jar generated/BinaryTreesKtConvBenchmark.jar 21 warmup
@@ -67,14 +60,14 @@ java -jar generated/BinaryTreesKtConvBenchmark.jar 21 warmup
 echo 'Executing Binary Trees Java benchmark'
 java -jar generated/BinaryTreesKtConvBenchmark.jar 21 benchmark
 
+echo 'Warmup Binary Trees Kotlin'
+java -cp generated/BinaryTreesJavaBenchmark.jar javabenchmarks.binarytrees.BinaryTreesExec 21 warmup
+java -cp generated/BinaryTreesJavaBenchmark.jar javabenchmarks.binarytrees.BinaryTreesExec 21 warmup
+java -cp generated/BinaryTreesJavaBenchmark.jar javabenchmarks.binarytrees.BinaryTreesExec 21 warmup
 
-echo 'Warmup Fannkuch Redux Java'
-java -cp generated/FannkuchReduxJavaBenchmark.jar javabenchmarks.fannkuchredux.FannkuchReduxExec 21 warmup
-java -cp generated/FannkuchReduxJavaBenchmark.jar javabenchmarks.fannkuchredux.FannkuchReduxExec 21 warmup
-java -cp generated/FannkuchReduxJavaBenchmark.jar javabenchmarks.fannkuchredux.FannkuchReduxExec 21 warmup
+echo 'Executing Binary Trees Kotlin benchmark'
+java -cp generated/BinaryTreesJavaBenchmark.jar javabenchmarks.binarytrees.BinaryTreesExec 21 benchmark
 
-echo 'Executing Fannkuch Redux Java benchmark'
-java -cp generated/FannkuchReduxJavaBenchmark.jar javabenchmarks.fannkuchredux.FannkuchReduxExec 21 benchmark
 
 echo 'Warmup Fannkuch Redux Kotlin'
 java -jar generated/FannkuchReduxKtConvBenchmark.jar 21 warmup
@@ -84,14 +77,14 @@ java -jar generated/FannkuchReduxKtConvBenchmark.jar 21 warmup
 echo 'Executing Fannkuch Redux Kotlin benchmark'
 java -jar generated/FannkuchReduxKtConvBenchmark.jar 21 benchmark
 
+echo 'Warmup Fannkuch Redux Java'
+java -cp generated/FannkuchReduxJavaBenchmark.jar javabenchmarks.fannkuchredux.FannkuchReduxExec 21 warmup
+java -cp generated/FannkuchReduxJavaBenchmark.jar javabenchmarks.fannkuchredux.FannkuchReduxExec 21 warmup
+java -cp generated/FannkuchReduxJavaBenchmark.jar javabenchmarks.fannkuchredux.FannkuchReduxExec 21 warmup
 
-echo 'Warmup Fasta Java'
-java -cp generated/FastaJavaBenchmark.jar javabenchmarks.fasta.FastaExec 21 warmup
-java -cp generated/FastaJavaBenchmark.jar javabenchmarks.fasta.FastaExec 21 warmup
-java -cp generated/FastaJavaBenchmark.jar javabenchmarks.fasta.FastaExec 21 warmup
+echo 'Executing Fannkuch Redux Java benchmark'
+java -cp generated/FannkuchReduxJavaBenchmark.jar javabenchmarks.fannkuchredux.FannkuchReduxExec 21 benchmark
 
-echo 'Executing Fasta Java benchmark'
-java -cp generated/FastaJavaBenchmark.jar javabenchmarks.fasta.FastaExec 21 benchmark
 
 echo 'Warmup Fasta Kotlin'
 java -jar generated/FastaKtConvBenchmark.jar 21 warmup
@@ -101,55 +94,64 @@ java -jar generated/FastaKtConvBenchmark.jar 21 warmup
 echo 'Executing Fasta Kotlin benchmark'
 java -jar generated/FastaKtConvBenchmark.jar 21 benchmark
 
-# echo 'Warmup Mandelbrot Kotlin'
-# java -jar generated/MandelbrotKtConvBenchmark.jar 21 warmup
-# java -jar generated/MandelbrotKtConvBenchmark.jar 21 warmup
-# java -jar generated/MandelbrotKtConvBenchmark.jar 21 warmup
+echo 'Warmup Fasta Java'
+java -cp generated/FastaJavaBenchmark.jar javabenchmarks.fasta.FastaExec 21 warmup
+java -cp generated/FastaJavaBenchmark.jar javabenchmarks.fasta.FastaExec 21 warmup
+java -cp generated/FastaJavaBenchmark.jar javabenchmarks.fasta.FastaExec 21 warmup
 
-# echo 'Executing Mandelbrot Kotlin benchmark'
-# java -jar generated/MandelbrotKtConvBenchmark.jar 21 benchmark
-
-# echo 'Warmup Mandelbrot Java'
-# java -cp generated/MandelbrotJavaBenchmark.jar javabenchmarks.mandelbrot.MandelbrotExec 21 warmup
-# java -cp generated/MandelbrotJavaBenchmark.jar javabenchmarks.mandelbrot.MandelbrotExec 21 warmup
-# java -cp generated/MandelbrotJavaBenchmark.jar javabenchmarks.mandelbrot.MandelbrotExec 21 warmup
-
-# echo 'Executing Mandelbrot Java benchmark'
-# java -cp generated/MandelbrotJavaBenchmark.jar javabenchmarks.mandelbrot.MandelbrotExec 21 benchmark
+echo 'Executing Fasta Java benchmark'
+java -cp generated/FastaJavaBenchmark.jar javabenchmarks.fasta.FastaExec 21 benchmark
 
 
-# echo 'Warmup NBody Kotlin'
-# java -jar generated/NBodyKtConvBenchmark.jar 21 warmup
-# java -jar generated/NBodyKtConvBenchmark.jar 21 warmup
-# java -jar generated/NBodyKtConvBenchmark.jar 21 warmup
+echo 'Warmup Mandelbrot Kotlin'
+java -jar generated/MandelbrotKtConvBenchmark.jar 21 warmup
+java -jar generated/MandelbrotKtConvBenchmark.jar 21 warmup
+java -jar generated/MandelbrotKtConvBenchmark.jar 21 warmup
 
-# echo 'Executing NBody Java benchmark'
-# java -jar generated/NBodyKtConvBenchmark.jar 21 benchmark
+echo 'Executing Mandelbrot Kotlin benchmark'
+java -jar generated/MandelbrotKtConvBenchmark.jar 21 benchmark
 
-# echo 'Warmup NBody Java'
-# java -cp generated/NBodyJavaBenchmark.jar javabenchmarks.nbody.NBodyExec 21 warmup
-# java -cp generated/NBodyJavaBenchmark.jar javabenchmarks.nbody.NBodyExec 21 warmup
-# java -cp generated/NBodyJavaBenchmark.jar javabenchmarks.nbody.NBodyExec 21 warmup
+echo 'Warmup Mandelbrot Java'
+java -cp generated/MandelbrotJavaBenchmark.jar javabenchmarks.mandelbrot.MandelbrotExec 21 warmup
+java -cp generated/MandelbrotJavaBenchmark.jar javabenchmarks.mandelbrot.MandelbrotExec 21 warmup
+java -cp generated/MandelbrotJavaBenchmark.jar javabenchmarks.mandelbrot.MandelbrotExec 21 warmup
 
-# echo 'Executing NBody Java benchmark'
-# java -cp generated/NBodyJavaBenchmark.jar javabenchmarks.nbody.NBodyExec 21 benchmark
+echo 'Executing Mandelbrot Java benchmark'
+java -cp generated/MandelbrotJavaBenchmark.jar javabenchmarks.mandelbrot.MandelbrotExec 21 benchmark
 
 
-# echo 'Warmup Spectral Norm Kotlin'
-# java -jar generated/SpectralNormKtConvBenchmark.jar 21 warmup
-# java -jar generated/SpectralNormKtConvBenchmark.jar 21 warmup
-# java -jar generated/SpectralNormKtConvBenchmark.jar 21 warmup
+echo 'Warmup NBody Kotlin'
+java -jar generated/NBodyKtConvBenchmark.jar 21 warmup
+java -jar generated/NBodyKtConvBenchmark.jar 21 warmup
+java -jar generated/NBodyKtConvBenchmark.jar 21 warmup
 
-# echo 'Executing Spectral Norm Java benchmark'
-# java -jar generated/SpectralNormKtConvBenchmark.jar 21 benchmark
+echo 'Executing NBody Java benchmark'
+java -jar generated/NBodyKtConvBenchmark.jar 21 benchmark
 
-# echo 'Warmup Spectral Norm Java'
-# java -cp generated/SpectralNormJavaBenchmark.jar javabenchmarks.spectralnorm.SpectralNormExec 21 warmup
-# java -cp generated/SpectralNormJavaBenchmark.jar javabenchmarks.spectralnorm.SpectralNormExec 21 warmup
-# java -cp generated/SpectralNormJavaBenchmark.jar javabenchmarks.spectralnorm.SpectralNormExec 21 warmup
+echo 'Warmup NBody Java'
+java -cp generated/NBodyJavaBenchmark.jar javabenchmarks.nbody.NBodyExec 21 warmup
+java -cp generated/NBodyJavaBenchmark.jar javabenchmarks.nbody.NBodyExec 21 warmup
+java -cp generated/NBodyJavaBenchmark.jar javabenchmarks.nbody.NBodyExec 21 warmup
 
-# echo 'Executing Spectral Norm Java benchmark'
-# java -cp generated/SpectralNormJavaBenchmark.jar javabenchmarks.spectralnorm.SpectralNormExec 21 benchmark
+echo 'Executing NBody Java benchmark'
+java -cp generated/NBodyJavaBenchmark.jar javabenchmarks.nbody.NBodyExec 21 benchmark
+
+
+echo 'Warmup Spectral Norm Kotlin'
+java -jar generated/SpectralNormKtConvBenchmark.jar 21 warmup
+java -jar generated/SpectralNormKtConvBenchmark.jar 21 warmup
+java -jar generated/SpectralNormKtConvBenchmark.jar 21 warmup
+
+echo 'Executing Spectral Norm Java benchmark'
+java -jar generated/SpectralNormKtConvBenchmark.jar 21 benchmark
+
+echo 'Warmup Spectral Norm Java'
+java -cp generated/SpectralNormJavaBenchmark.jar javabenchmarks.spectralnorm.SpectralNormExec 21 warmup
+java -cp generated/SpectralNormJavaBenchmark.jar javabenchmarks.spectralnorm.SpectralNormExec 21 warmup
+java -cp generated/SpectralNormJavaBenchmark.jar javabenchmarks.spectralnorm.SpectralNormExec 21 warmup
+
+echo 'Executing Spectral Norm Java benchmark'
+java -cp generated/SpectralNormJavaBenchmark.jar javabenchmarks.spectralnorm.SpectralNormExec 21 benchmark
 
 
 echo 'End of benchmark'
