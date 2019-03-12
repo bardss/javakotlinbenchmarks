@@ -1,6 +1,6 @@
-package kotlinbenchmarks.converted.nbody
+package kotlinbenchmarks.idiomatic.nbody
 
-object NBodyConv {
+object NBodyIdiom {
     @JvmStatic
     fun execute(args: Array<String>) {
         val n = Integer.parseInt(args[0])
@@ -13,12 +13,11 @@ object NBodyConv {
     }
 }
 
-internal class NBodySystem {
+private class NBodySystem {
 
-    private val bodies: Array<Body>
+    private val bodies: Array<Body> = arrayOf(Body.sun(), Body.jupiter(), Body.saturn(), Body.uranus(), Body.neptune())
 
     init {
-        bodies = arrayOf(Body.sun(), Body.jupiter(), Body.saturn(), Body.uranus(), Body.neptune())
 
         var px = 0.0
         var py = 0.0
@@ -98,12 +97,12 @@ internal class NBodySystem {
     }
 
     companion object {
-        private val LENGTH = 5
+        private const val LENGTH = 5
     }
 }
 
 
-internal class Body {
+private class Body {
 
     var x: Double = 0.toDouble()
     var y: Double = 0.toDouble()
@@ -121,9 +120,9 @@ internal class Body {
     }
 
     companion object {
-        val PI = 3.141592653589793
-        val SOLAR_MASS = 4.0 * PI * PI
-        val DAYS_PER_YEAR = 365.24
+        private const val PI = 3.141592653589793
+        private const val SOLAR_MASS = 4.0 * PI * PI
+        private const val DAYS_PER_YEAR = 365.24
 
         fun jupiter(): Body {
             val p = Body()

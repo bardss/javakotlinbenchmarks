@@ -1,14 +1,5 @@
 package kotlinbenchmarks.converted.binarytrees
 
-/**
- * The Computer Language Benchmarks Game
- * https://salsa.debian.org/benchmarksgame-team/benchmarksgame/
- *
- * based on Jarkko Miettinen's Java program
- * contributed by Tristan Dupont
- * *reset*
- */
-
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
 

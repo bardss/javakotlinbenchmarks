@@ -217,3 +217,65 @@ Fasta Java: 116139104
 06.03.2019 08:19:29
 Fasta Kotlin Converted: 105057637
 
+12.03.2019 12:20:26
+BinaryTrees Kotlin Converted: 5649763238
+
+
+12.03.2019 12:20:44
+BinaryTrees Kotlin Idiomatic: 4349070822
+
+
+12.03.2019 12:21:05
+BinaryTrees Java: 4556010652
+
+12.03.2019 12:21:06
+Fannkuch Redux Kotlin Converted: 1646188
+
+
+12.03.2019 12:21:07
+Fannkuch Redux Kotlin Idiomatic: 2452948
+
+
+12.03.2019 12:21:08
+Fannkuch Redux Java: 56462247
+
+12.03.2019 12:21:11
+Fasta Kotlin Converted: 429664630
+
+
+12.03.2019 12:21:14
+Fasta Kotlin Converted: 373150030
+
+
+12.03.2019 12:21:16
+Fasta Java: 324024026
+
+12.03.2019 12:21:17
+Mandelbrot Kotlin Converted: 3431434
+
+
+12.03.2019 12:21:19
+Mandelbrot Java: 78363242
+
+12.03.2019 12:21:20
+NBody Kotlin Converted: 54096451
+
+
+12.03.2019 12:21:21
+NBody Kotlin Idiomatic: 66971726
+
+
+12.03.2019 12:21:22
+NBody Java: 62782796
+
+12.03.2019 12:21:24
+Spectral Norm Kotlin Converted: 62817730
+
+
+12.03.2019 12:21:25
+SpectralNorm Kotlin Idiomatic: 50006800
+
+
+12.03.2019 12:21:26
+SpectralNorm Java: 52379030
+

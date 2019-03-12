@@ -1,15 +1,15 @@
-package kotlinbenchmarks.converted.spectralnorm
+package kotlinbenchmarks.idiomatic.spectralnorm
 
 import java.text.DecimalFormat
 import java.util.concurrent.CyclicBarrier
 
-object SpectralNormConv {
+object SpectralNormIdiom {
     private val formatter = DecimalFormat("#.000000000")
 
     @JvmStatic
     fun execute(args: Array<String>) {
         var n = 1000
-        if (args.size > 0) n = Integer.parseInt(args[0])
+        if (args.isNotEmpty()) n = Integer.parseInt(args[0])
 
         println(formatter.format(spectralnormGame(n)))
     }
@@ -43,10 +43,11 @@ object SpectralNormConv {
         var vv = 0.0
         for (i in 0 until nthread) {
             try {
-                ap[i]!!.join()
-
-                vBv += ap[i]!!.m_vBv
-                vv += ap[i]!!.m_vv
+                ap[i]?.let { approximate ->
+                    approximate.join()
+                    vBv += approximate.m_vBv
+                    vv += approximate.m_vv
+                }
             } catch (e: Exception) {
                 e.printStackTrace()
             }
@@ -107,10 +108,10 @@ object SpectralNormConv {
             try {
                 MultiplyAv(v, tmp)
                 // all thread must syn at completion
-                barrier!!.await()
+                barrier?.await()
                 MultiplyAtv(tmp, AtAv)
                 // all thread must syn at completion
-                barrier!!.await()
+                barrier?.await()
             } catch (e: Exception) {
                 e.printStackTrace()
             }

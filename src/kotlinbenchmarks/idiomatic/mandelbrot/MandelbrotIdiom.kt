@@ -1,15 +1,15 @@
-package kotlinbenchmarks.converted.mandelbrot
+package kotlinbenchmarks.idiomatic.mandelbrot
 
 import java.io.*
 import java.util.concurrent.atomic.*
 
-object MandelbrotConv {
-    internal var out: Array<ByteArray> = arrayOf()
-    internal var yCt: AtomicInteger = AtomicInteger()
-    internal var Crb: DoubleArray = doubleArrayOf()
-    internal var Cib: DoubleArray = doubleArrayOf()
+object MandelbrotIdiom {
+    private var out: Array<ByteArray> = arrayOf()
+    private var yCt: AtomicInteger = AtomicInteger()
+    private var Crb: DoubleArray = doubleArrayOf()
+    private var Cib: DoubleArray = doubleArrayOf()
 
-    internal fun getByte(x: Int, y: Int): Int {
+    private fun getByte(x: Int, y: Int): Int {
         var res = 0
         var i = 0
         while (i < 8) {
@@ -56,7 +56,7 @@ object MandelbrotConv {
     @JvmStatic
     fun execute(args: Array<String>) {
         var N = 6000
-        if (args.size >= 1) N = Integer.parseInt(args[0])
+        if (args.isNotEmpty()) N = Integer.parseInt(args[0])
 
         Crb = DoubleArray(N + 7)
         Cib = DoubleArray(N + 7)
@@ -79,8 +79,8 @@ object MandelbrotConv {
                     }
                 }
             }
-        for (t in pool) t!!.start()
-        for (t in pool) t!!.join()
+        for (t in pool) t?.start()
+        for (t in pool) t?.join()
 
         val stream = BufferedOutputStream(System.out)
         stream.write("P4\n$N $N\n".toByteArray())

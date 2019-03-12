@@ -1,13 +1,5 @@
 package kotlinbenchmarks.idiomatic.fannkuchredux
 
-/*
- * The Computer Language Benchmarks Game
- * https://salsa.debian.org/benchmarksgame-team/benchmarksgame/
- *
- * Contributed by Oleg Mazurov, June 2010
- *
- */
-
 import java.util.concurrent.atomic.AtomicInteger
 
 class FannkuchReduxIdiom : Runnable {
