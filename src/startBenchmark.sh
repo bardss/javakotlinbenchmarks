@@ -99,128 +99,128 @@ java -cp generated/BinaryTreesJavaBenchmark.jar javabenchmarks.binarytrees.Binar
 
 
 echo 'Warmup Fannkuch Redux Kotlin Converted'
-java -jar generated/FannkuchReduxKtConvBenchmark.jar 21 warmup
-java -jar generated/FannkuchReduxKtConvBenchmark.jar 21 warmup
-java -jar generated/FannkuchReduxKtConvBenchmark.jar 21 warmup
+java -jar generated/FannkuchReduxKtConvBenchmark.jar 7 warmup
+java -jar generated/FannkuchReduxKtConvBenchmark.jar 7 warmup
+java -jar generated/FannkuchReduxKtConvBenchmark.jar 7 warmup
 
 echo 'Executing Fannkuch Redux Kotlin Converted benchmark'
-java -jar generated/FannkuchReduxKtConvBenchmark.jar 21 benchmark
+java -jar generated/FannkuchReduxKtConvBenchmark.jar 7 benchmark
 
 echo 'Warmup Fannkuch Redux Kotlin Idiomatic'
-java -jar generated/FannkuchReduxKtIdiomBenchmark.jar 21 warmup
-java -jar generated/FannkuchReduxKtIdiomBenchmark.jar 21 warmup
-java -jar generated/FannkuchReduxKtIdiomBenchmark.jar 21 warmup
+java -jar generated/FannkuchReduxKtIdiomBenchmark.jar 7 warmup
+java -jar generated/FannkuchReduxKtIdiomBenchmark.jar 7 warmup
+java -jar generated/FannkuchReduxKtIdiomBenchmark.jar 7 warmup
 
 echo 'Executing Fannkuch Redux Kotlin Idiomatic benchmark'
-java -jar generated/FannkuchReduxKtIdiomBenchmark.jar 21 benchmark
+java -jar generated/FannkuchReduxKtIdiomBenchmark.jar 7 benchmark
 
 echo 'Warmup Fannkuch Redux Java'
-java -cp generated/FannkuchReduxJavaBenchmark.jar javabenchmarks.fannkuchredux.FannkuchReduxExec 21 warmup
-java -cp generated/FannkuchReduxJavaBenchmark.jar javabenchmarks.fannkuchredux.FannkuchReduxExec 21 warmup
-java -cp generated/FannkuchReduxJavaBenchmark.jar javabenchmarks.fannkuchredux.FannkuchReduxExec 21 warmup
+java -cp generated/FannkuchReduxJavaBenchmark.jar javabenchmarks.fannkuchredux.FannkuchReduxExec 7 warmup
+java -cp generated/FannkuchReduxJavaBenchmark.jar javabenchmarks.fannkuchredux.FannkuchReduxExec 7 warmup
+java -cp generated/FannkuchReduxJavaBenchmark.jar javabenchmarks.fannkuchredux.FannkuchReduxExec 7 warmup
 
 echo 'Executing Fannkuch Redux Java benchmark'
-java -cp generated/FannkuchReduxJavaBenchmark.jar javabenchmarks.fannkuchredux.FannkuchReduxExec 21 benchmark
+java -cp generated/FannkuchReduxJavaBenchmark.jar javabenchmarks.fannkuchredux.FannkuchReduxExec 7 benchmark
 
 
 echo 'Warmup Fasta Kotlin Converted'
-java -jar generated/FastaKtConvBenchmark.jar 21 warmup
-java -jar generated/FastaKtConvBenchmark.jar 21 warmup
-java -jar generated/FastaKtConvBenchmark.jar 21 warmup
+java -jar generated/FastaKtConvBenchmark.jar 25000000 warmup
+java -jar generated/FastaKtConvBenchmark.jar 25000000 warmup
+java -jar generated/FastaKtConvBenchmark.jar 25000000 warmup
 
 echo 'Executing Fasta Kotlin Converted benchmark'
-java -jar generated/FastaKtConvBenchmark.jar 21 benchmark
+java -jar generated/FastaKtConvBenchmark.jar 25000000 benchmark
 
 echo 'Warmup Fasta Kotlin Idiomatic'
-java -jar generated/FastaKtIdiomBenchmark.jar 21 warmup
-java -jar generated/FastaKtIdiomBenchmark.jar 21 warmup
-java -jar generated/FastaKtIdiomBenchmark.jar 21 warmup
+java -jar generated/FastaKtIdiomBenchmark.jar 25000000 warmup
+java -jar generated/FastaKtIdiomBenchmark.jar 25000000 warmup
+java -jar generated/FastaKtIdiomBenchmark.jar 25000000 warmup
 
 echo 'Executing Fasta Kotlin Idiomatic benchmark'
-java -jar generated/FastaKtIdiomBenchmark.jar 21 benchmark
+java -jar generated/FastaKtIdiomBenchmark.jar 25000000 benchmark
 
 echo 'Warmup Fasta Java'
-java -cp generated/FastaJavaBenchmark.jar javabenchmarks.fasta.FastaExec 21 warmup
-java -cp generated/FastaJavaBenchmark.jar javabenchmarks.fasta.FastaExec 21 warmup
-java -cp generated/FastaJavaBenchmark.jar javabenchmarks.fasta.FastaExec 21 warmup
+java -cp generated/FastaJavaBenchmark.jar javabenchmarks.fasta.FastaExec 25000000 warmup
+java -cp generated/FastaJavaBenchmark.jar javabenchmarks.fasta.FastaExec 25000000 warmup
+java -cp generated/FastaJavaBenchmark.jar javabenchmarks.fasta.FastaExec 25000000 warmup
 
 echo 'Executing Fasta Java benchmark'
-java -cp generated/FastaJavaBenchmark.jar javabenchmarks.fasta.FastaExec 21 benchmark
+java -cp generated/FastaJavaBenchmark.jar javabenchmarks.fasta.FastaExec 25000000 benchmark
 
 
 echo 'Warmup Mandelbrot Kotlin Converted'
-java -jar generated/MandelbrotKtConvBenchmark.jar 21 warmup
-java -jar generated/MandelbrotKtConvBenchmark.jar 21 warmup
-java -jar generated/MandelbrotKtConvBenchmark.jar 21 warmup
+java -jar generated/MandelbrotKtConvBenchmark.jar 16000 warmup
+java -jar generated/MandelbrotKtConvBenchmark.jar 16000 warmup
+java -jar generated/MandelbrotKtConvBenchmark.jar 16000 warmup
 
 echo 'Executing Mandelbrot Kotlin Converted benchmark'
-java -jar generated/MandelbrotKtConvBenchmark.jar 21 benchmark
+java -jar generated/MandelbrotKtConvBenchmark.jar 16000 benchmark
 
 echo 'Warmup Mandelbrot Kotlin Idiomatic'
-java -jar generated/MandelbrotKtIdiomBenchmark.jar 21 warmup
-java -jar generated/MandelbrotKtIdiomBenchmark.jar 21 warmup
-java -jar generated/MandelbrotKtIdiomBenchmark.jar 21 warmup
+java -jar generated/MandelbrotKtIdiomBenchmark.jar 16000 warmup
+java -jar generated/MandelbrotKtIdiomBenchmark.jar 16000 warmup
+java -jar generated/MandelbrotKtIdiomBenchmark.jar 16000 warmup
 
 echo 'Executing Mandelbrot Kotlin Idiomatic benchmark'
-java -jar generated/MandelbrotKtIdiomenchmark.jar 21 benchmark
+java -jar generated/MandelbrotKtIdiomenchmark.jar 16000 benchmark
 
 echo 'Warmup Mandelbrot Java'
-java -cp generated/MandelbrotJavaBenchmark.jar javabenchmarks.mandelbrot.MandelbrotExec 21 warmup
-java -cp generated/MandelbrotJavaBenchmark.jar javabenchmarks.mandelbrot.MandelbrotExec 21 warmup
-java -cp generated/MandelbrotJavaBenchmark.jar javabenchmarks.mandelbrot.MandelbrotExec 21 warmup
+java -cp generated/MandelbrotJavaBenchmark.jar javabenchmarks.mandelbrot.MandelbrotExec 16000 warmup
+java -cp generated/MandelbrotJavaBenchmark.jar javabenchmarks.mandelbrot.MandelbrotExec 16000 warmup
+java -cp generated/MandelbrotJavaBenchmark.jar javabenchmarks.mandelbrot.MandelbrotExec 16000 warmup
 
 echo 'Executing Mandelbrot Java benchmark'
-java -cp generated/MandelbrotJavaBenchmark.jar javabenchmarks.mandelbrot.MandelbrotExec 21 benchmark
+java -cp generated/MandelbrotJavaBenchmark.jar javabenchmarks.mandelbrot.MandelbrotExec 16000 benchmark
 
 
 echo 'Warmup NBody Kotlin Converted'
-java -jar generated/NBodyKtConvBenchmark.jar 21 warmup
-java -jar generated/NBodyKtConvBenchmark.jar 21 warmup
-java -jar generated/NBodyKtConvBenchmark.jar 21 warmup
+java -jar generated/NBodyKtConvBenchmark.jar 50000000 warmup
+java -jar generated/NBodyKtConvBenchmark.jar 50000000 warmup
+java -jar generated/NBodyKtConvBenchmark.jar 50000000 warmup
 
 echo 'Executing NBody Java Converted benchmark'
-java -jar generated/NBodyKtConvBenchmark.jar 21 benchmark
+java -jar generated/NBodyKtConvBenchmark.jar 50000000 benchmark
 
 echo 'Warmup NBody Kotlin Idiomatic'
-java -jar generated/NBodyKtIdiomBenchmark.jar 21 warmup
-java -jar generated/NBodyKtIdiomBenchmark.jar 21 warmup
-java -jar generated/NBodyKtIdiomBenchmark.jar 21 warmup
+java -jar generated/NBodyKtIdiomBenchmark.jar 50000000 warmup
+java -jar generated/NBodyKtIdiomBenchmark.jar 50000000 warmup
+java -jar generated/NBodyKtIdiomBenchmark.jar 50000000 warmup
 
 echo 'Executing NBody Java Idiomatic benchmark'
-java -jar generated/NBodyKtIdiomBenchmark.jar 21 benchmark
+java -jar generated/NBodyKtIdiomBenchmark.jar 50000000 benchmark
 
 echo 'Warmup NBody Java'
-java -cp generated/NBodyJavaBenchmark.jar javabenchmarks.nbody.NBodyExec 21 warmup
-java -cp generated/NBodyJavaBenchmark.jar javabenchmarks.nbody.NBodyExec 21 warmup
-java -cp generated/NBodyJavaBenchmark.jar javabenchmarks.nbody.NBodyExec 21 warmup
+java -cp generated/NBodyJavaBenchmark.jar javabenchmarks.nbody.NBodyExec 50000000 warmup
+java -cp generated/NBodyJavaBenchmark.jar javabenchmarks.nbody.NBodyExec 50000000 warmup
+java -cp generated/NBodyJavaBenchmark.jar javabenchmarks.nbody.NBodyExec 50000000 warmup
 
 echo 'Executing NBody Java benchmark'
-java -cp generated/NBodyJavaBenchmark.jar javabenchmarks.nbody.NBodyExec 21 benchmark
+java -cp generated/NBodyJavaBenchmark.jar javabenchmarks.nbody.NBodyExec 50000000 benchmark
 
 
 echo 'Warmup Spectral Norm Kotlin Converted'
-java -jar generated/SpectralNormKtConvBenchmark.jar 21 warmup
-java -jar generated/SpectralNormKtConvBenchmark.jar 21 warmup
-java -jar generated/SpectralNormKtConvBenchmark.jar 21 warmup
+java -jar generated/SpectralNormKtConvBenchmark.jar 5500 warmup
+java -jar generated/SpectralNormKtConvBenchmark.jar 5500 warmup
+java -jar generated/SpectralNormKtConvBenchmark.jar 5500 warmup
 
 echo 'Executing Spectral Norm Kotlin Converted benchmark'
-java -jar generated/SpectralNormKtConvBenchmark.jar 21 benchmark
+java -jar generated/SpectralNormKtConvBenchmark.jar 5500 benchmark
 
 echo 'Warmup Spectral Norm Kotlin Idiomatic'
-java -jar generated/SpectralNormKtIdiomBenchmark.jar 21 warmup
-java -jar generated/SpectralNormKtIdiomBenchmark.jar 21 warmup
-java -jar generated/SpectralNormKtIdiomBenchmark.jar 21 warmup
+java -jar generated/SpectralNormKtIdiomBenchmark.jar 5500 warmup
+java -jar generated/SpectralNormKtIdiomBenchmark.jar 5500 warmup
+java -jar generated/SpectralNormKtIdiomBenchmark.jar 5500 warmup
 
 echo 'Executing Spectral Norm Kotlin Idiomatic benchmark'
-java -jar generated/SpectralNormKtIdiomBenchmark.jar 21 benchmark
+java -jar generated/SpectralNormKtIdiomBenchmark.jar 5500 benchmark
 
 echo 'Warmup Spectral Norm Java'
-java -cp generated/SpectralNormJavaBenchmark.jar javabenchmarks.spectralnorm.SpectralNormExec 21 warmup
-java -cp generated/SpectralNormJavaBenchmark.jar javabenchmarks.spectralnorm.SpectralNormExec 21 warmup
-java -cp generated/SpectralNormJavaBenchmark.jar javabenchmarks.spectralnorm.SpectralNormExec 21 warmup
+java -cp generated/SpectralNormJavaBenchmark.jar javabenchmarks.spectralnorm.SpectralNormExec 5500 warmup
+java -cp generated/SpectralNormJavaBenchmark.jar javabenchmarks.spectralnorm.SpectralNormExec 5500 warmup
+java -cp generated/SpectralNormJavaBenchmark.jar javabenchmarks.spectralnorm.SpectralNormExec 5500 warmup
 
 echo 'Executing Spectral Norm Java benchmark'
-java -cp generated/SpectralNormJavaBenchmark.jar javabenchmarks.spectralnorm.SpectralNormExec 21 benchmark
+java -cp generated/SpectralNormJavaBenchmark.jar javabenchmarks.spectralnorm.SpectralNormExec 5500 benchmark
 
 
 echo 'End of benchmark'
