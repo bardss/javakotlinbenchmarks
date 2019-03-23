@@ -4,3 +4,5 @@ src/.DS_Store
 *.jar
 
 \.idea/
+
+\out/
