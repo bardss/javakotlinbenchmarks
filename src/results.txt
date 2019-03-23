@@ -279,3 +279,127 @@ SpectralNorm Kotlin Idiomatic: 50006800
 12.03.2019 12:21:26
 SpectralNorm Java: 52379030
 
+16.03.2019 16:24:27
+BinaryTrees Kotlin Converted: 5909808774
+
+
+16.03.2019 16:24:52
+BinaryTrees Kotlin Idiomatic: 6562594300
+
+
+16.03.2019 16:25:23
+BinaryTrees Java: 6577043914
+
+16.03.2019 16:25:24
+Fannkuch Redux Kotlin Converted: 3601530
+
+
+16.03.2019 16:25:25
+Fannkuch Redux Kotlin Idiomatic: 3370086
+
+
+16.03.2019 16:25:26
+Fannkuch Redux Java: 58854652
+
+16.03.2019 16:26:28
+Fasta Kotlin Converted: 15648854578
+
+
+16.03.2019 16:27:45
+Fasta Kotlin Converted: 16500813972
+
+
+16.03.2019 16:28:51
+Fasta Java: 16127140936
+
+16.03.2019 16:29:27
+Mandelbrot Kotlin Converted: 8474256371
+
+
+16.03.2019 16:30:31
+Mandelbrot Java: 8330761601
+
+16.03.2019 16:31:00
+NBody Kotlin Converted: 6878153570
+
+
+16.03.2019 16:31:28
+NBody Kotlin Idiomatic: 6695318219
+
+
+16.03.2019 16:31:56
+NBody Java: 6677653512
+
+16.03.2019 16:32:09
+Spectral Norm Kotlin Converted: 2987564111
+
+
+16.03.2019 16:32:22
+SpectralNorm Kotlin Idiomatic: 2982513956
+
+
+16.03.2019 16:32:34
+SpectralNorm Java: 2918357489
+
+23.03.2019 12:47:48
+BinaryTrees Kotlin Converted: 4037047310
+
+
+23.03.2019 12:48:06
+BinaryTrees Kotlin Idiomatic: 4036942086
+
+
+23.03.2019 12:48:38
+BinaryTrees Java: 9517972726
+
+23.03.2019 12:48:39
+Fannkuch Redux Kotlin Converted: 3762648
+
+
+23.03.2019 12:48:40
+Fannkuch Redux Kotlin Idiomatic: 21250835
+
+
+23.03.2019 12:48:41
+Fannkuch Redux Java: 108298113
+
+23.03.2019 12:49:47
+Fasta Kotlin Converted: 15654427392
+
+
+23.03.2019 12:51:45
+Fasta Kotlin Converted: 22109083362
+
+
+23.03.2019 12:53:06
+Fasta Java: 14865790599
+
+23.03.2019 12:53:51
+Mandelbrot Kotlin Converted: 9589733358
+
+
+23.03.2019 12:56:53
+Mandelbrot Java: 51640172634
+
+23.03.2019 12:57:41
+NBody Kotlin Converted: 9500903945
+
+
+23.03.2019 12:58:37
+NBody Kotlin Idiomatic: 18875631042
+
+
+23.03.2019 12:59:29
+NBody Java: 8989185305
+
+23.03.2019 12:59:47
+Spectral Norm Kotlin Converted: 3500864999
+
+
+23.03.2019 13:00:08
+SpectralNorm Kotlin Idiomatic: 4858705590
+
+
+23.03.2019 13:00:28
+SpectralNorm Java: 3430826365
+

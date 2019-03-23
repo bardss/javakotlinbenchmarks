@@ -6,10 +6,9 @@ import java.util.concurrent.CyclicBarrier
 object SpectralNormIdiom {
     private val formatter = DecimalFormat("#.000000000")
 
-    @JvmStatic
-    fun execute(args: Array<String>) {
+    fun main(args: Array<String>) {
         var n = 1000
-        if (args.isNotEmpty()) n = Integer.parseInt(args[0])
+        if (args.isNotEmpty()) n = args[0].toInt()
 
         println(formatter.format(spectralnormGame(n)))
     }
@@ -64,7 +63,6 @@ object SpectralNormIdiom {
 
 
         init {
-
             start()
         }
 

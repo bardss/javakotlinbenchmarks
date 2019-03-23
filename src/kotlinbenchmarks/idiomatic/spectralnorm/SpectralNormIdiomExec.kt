@@ -5,7 +5,7 @@ import resultswriter.ResultsWriterKt
 fun main(args: Array<String>) {
     val key = "SpectralNorm Kotlin Idiomatic"
     val startTime = System.nanoTime()
-    SpectralNormIdiom.execute(args)
+    SpectralNormIdiom.main(args)
     val endTime = System.nanoTime()
     if (args[1] != "warmup") {
         val result = endTime - startTime

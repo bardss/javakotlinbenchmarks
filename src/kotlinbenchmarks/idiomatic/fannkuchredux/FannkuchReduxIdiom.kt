@@ -4,16 +4,9 @@ import java.util.concurrent.atomic.AtomicInteger
 
 class FannkuchReduxIdiom : Runnable {
 
-    private var p: IntArray = intArrayOf()
-    private var pp: IntArray = intArrayOf()
-    private var count: IntArray = intArrayOf()
-
-    internal fun print() {
-        for (i in p.indices) {
-            print(p[i] + 1)
-        }
-        println()
-    }
+    private var p = intArrayOf()
+    private var pp = intArrayOf()
+    private var count = intArrayOf()
 
     private fun firstPermutation(idxArg: Int) {
         var idx = idxArg
@@ -120,20 +113,18 @@ class FannkuchReduxIdiom : Runnable {
         private var CHUNKSZ: Int = 0
         private var NTASKS: Int = 0
         private var n: Int = 0
-        private var Fact: IntArray = intArrayOf()
-        private var maxFlips: IntArray  = intArrayOf()
-        private var chkSums: IntArray = intArrayOf()
+        private var Fact = intArrayOf()
+        private var maxFlips  = intArrayOf()
+        private var chkSums = intArrayOf()
         private var taskId = AtomicInteger()
 
         private fun printResult(n: Int, res: Int, chk: Int) {
-            val chkText = chk.toString()
-            println("$chkText \nPfannkuchen( $n ) = $res")
+            println("$chk \nPfannkuchen($n) = $res")
         }
 
-        @JvmStatic
-        fun execute(args: Array<String>) {
-            n = if (args.isNotEmpty()) Integer.parseInt(args[0]) else 12
-            if (n < 0 || n > 12) {         // 13! won't fit into int
+        fun main(args: Array<String>) {
+            n = if (args.isNotEmpty()) args[0].toInt() else 12
+            if (n < 0 || n > 12) {
                 printResult(n, -1, -1)
                 return
             }
@@ -160,8 +151,8 @@ class FannkuchReduxIdiom : Runnable {
                 threads[i] = Thread(FannkuchReduxIdiom())
                 threads[i]?.start()
             }
-            for (t in threads) {
-                t?.join()
+            threads.filterNotNull().forEach { thread ->
+                thread.join()
             }
 
             var res = 0

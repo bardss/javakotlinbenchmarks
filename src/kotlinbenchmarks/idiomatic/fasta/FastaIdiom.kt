@@ -1,10 +1,3 @@
-/*
- * The Computer Language Benchmarks Game
- * https://salsa.debian.org/benchmarksgame-team/benchmarksgame/
- * 
- * modified by Mehmet D. AKIN
- * modified by Daryl Griffith
- */
 package kotlinbenchmarks.idiomatic.fasta
 
 import java.io.IOException
@@ -30,17 +23,17 @@ object FastaIdiom {
     private val ONE_OVER_IM = 1f / IM
     private var last = 42
 
-    @JvmStatic
-    fun execute(args: Array<String>) {
+    fun main(args: Array<String>) {
         var n = 1000
 
         if (args.isNotEmpty()) {
-            n = Integer.parseInt(args[0])
+            n = args[0].toInt()
         }
-        for (i in WORKERS.indices) {
-            WORKERS[i] = NucleotideSelector()
-            WORKERS[i]?.isDaemon = true
-            WORKERS[i]?.start()
+        WORKERS.indices.forEach { i ->
+            WORKERS[i] = NucleotideSelector().apply {
+                isDaemon = true
+                start()
+            }
         }
         try {
             System.out.use { writer ->
@@ -182,7 +175,7 @@ object FastaIdiom {
 
     abstract class AbstractBuffer(internal val LINE_LENGTH: Int, nChars: Int) {
         internal val LINE_COUNT: Int
-        internal var chars: ByteArray = byteArrayOf()
+        internal var chars = byteArrayOf()
         internal val nucleotides: ByteArray
         internal val CHARS_LEFTOVER: Int
 
@@ -205,7 +198,7 @@ object FastaIdiom {
         abstract fun selectNucleotides()
     }
 
-    class AluBuffer(lineLength: Int, internal val nChars: Int, offset: Int) : AbstractBuffer(lineLength, nChars) {
+    class AluBuffer(lineLength: Int, private val nChars: Int, offset: Int) : AbstractBuffer(lineLength, nChars) {
 
         private val ALU = (
                 "GGCCGGGCGCGGTGGCTCACGCCTGTAATCCCAGCACTTTGG"

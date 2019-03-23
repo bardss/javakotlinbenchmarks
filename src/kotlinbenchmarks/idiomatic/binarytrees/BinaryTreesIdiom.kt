@@ -8,12 +8,10 @@ object BinaryTreesIdiom {
     private const val MIN_DEPTH = 4
     private val EXECUTOR_SERVICE by lazy { Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors()) }
 
-    @Throws(Exception::class)
-    @JvmStatic
-    fun execute(args: Array<String>) {
+    fun main(args: Array<String>) {
         var n = 0
         if (args.isNotEmpty()) {
-            n = Integer.parseInt(args[0])
+            n = args[0].toInt()
         }
 
         val maxDepth = if (n < MIN_DEPTH + 2) MIN_DEPTH + 2 else n
@@ -36,8 +34,7 @@ object BinaryTreesIdiom {
                     val treeNode1 = bottomUpTree(depth)
                     check += treeNode1.itemCheck()
                 }
-                val iterationsString = iterations.toString()
-                results[(depth - MIN_DEPTH) / 2] = "$iterationsString \t trees of depth $depth \t check: $check"
+                results[(depth - MIN_DEPTH) / 2] = "$iterations \t trees of depth $depth \t check: $check"
             }
             d += 2
         }
@@ -45,8 +42,8 @@ object BinaryTreesIdiom {
         EXECUTOR_SERVICE.shutdown()
         EXECUTOR_SERVICE.awaitTermination(120L, TimeUnit.SECONDS)
 
-        for (str in results) {
-            println(str)
+        results.forEach {
+            println(it)
         }
 
         println("long lived tree of depth $maxDepth \t check: ${longLivedTree.itemCheck()}")

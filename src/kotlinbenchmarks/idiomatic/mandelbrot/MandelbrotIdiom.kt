@@ -5,9 +5,9 @@ import java.util.concurrent.atomic.*
 
 object MandelbrotIdiom {
     private var out: Array<ByteArray> = arrayOf()
-    private var yCt: AtomicInteger = AtomicInteger()
-    private var Crb: DoubleArray = doubleArrayOf()
-    private var Cib: DoubleArray = doubleArrayOf()
+    private var yCt = AtomicInteger()
+    private var Crb = doubleArrayOf()
+    private var Cib = doubleArrayOf()
 
     private fun getByte(x: Int, y: Int): Int {
         var res = 0
@@ -48,15 +48,14 @@ object MandelbrotIdiom {
     }
 
     internal fun putLine(y: Int, line: ByteArray) {
-        for (xb in line.indices)
-            line[xb] = getByte(xb * 8, y).toByte()
+        line.indices.forEach { index ->
+            line[index] = getByte(index * 8, y).toByte()
+        }
     }
 
-    @Throws(Exception::class)
-    @JvmStatic
-    fun execute(args: Array<String>) {
+    fun main(args: Array<String>) {
         var N = 6000
-        if (args.isNotEmpty()) N = Integer.parseInt(args[0])
+        if (args.isNotEmpty()) N = args[0].toInt()
 
         Crb = DoubleArray(N + 7)
         Cib = DoubleArray(N + 7)
@@ -79,12 +78,14 @@ object MandelbrotIdiom {
                     }
                 }
             }
-        for (t in pool) t?.start()
-        for (t in pool) t?.join()
+        pool.filterNotNull().forEach { thread ->
+            thread.start()
+            thread.join()
+        }
 
-        val stream = BufferedOutputStream(System.out)
-        stream.write("P4\n$N $N\n".toByteArray())
-        for (i in 0 until N) stream.write(out[i])
-        stream.close()
+        BufferedOutputStream(System.out).apply {
+            write("P4\n$N $N\n".toByteArray())
+            for (i in 0 until N) write(out[i])
+        }.close()
     }
 }
