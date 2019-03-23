@@ -2,3 +2,5 @@
 src/.DS_Store
 *.class
 *.jar
+
+\.idea/
