@@ -2,7 +2,6 @@ package resultswriter
 
 import java.io.BufferedWriter
 import java.io.FileWriter
-import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 

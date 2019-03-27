@@ -2,6 +2,10 @@ package kotlinbenchmarks.idiomatic.fannkuchredux
 
 import java.util.concurrent.atomic.AtomicInteger
 
+fun main(args: Array<String>) {
+    FannkuchReduxIdiom.execute(args)
+}
+
 class FannkuchReduxIdiom : Runnable {
 
     private var p = intArrayOf()
@@ -122,7 +126,7 @@ class FannkuchReduxIdiom : Runnable {
             println("$chk \nPfannkuchen($n) = $res")
         }
 
-        fun main(args: Array<String>) {
+        fun execute(args: Array<String>) {
             n = if (args.isNotEmpty()) args[0].toInt() else 12
             if (n < 0 || n > 12) {
                 printResult(n, -1, -1)

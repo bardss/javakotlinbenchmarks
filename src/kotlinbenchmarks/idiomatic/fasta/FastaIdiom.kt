@@ -5,6 +5,10 @@ import java.io.OutputStream
 import java.util.concurrent.ArrayBlockingQueue
 import java.util.concurrent.atomic.AtomicInteger
 
+fun main(args: Array<String>) {
+    FastaIdiom.execute(args)
+}
+
 object FastaIdiom {
 
     private val LINE_LENGTH = 60
@@ -23,7 +27,7 @@ object FastaIdiom {
     private val ONE_OVER_IM = 1f / IM
     private var last = 42
 
-    fun main(args: Array<String>) {
+    fun execute(args: Array<String>) {
         var n = 1000
 
         if (args.isNotEmpty()) {

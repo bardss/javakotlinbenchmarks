@@ -1,7 +1,11 @@
 package kotlinbenchmarks.converted.mandelbrot
 
-import java.io.*
-import java.util.concurrent.atomic.*
+import java.io.BufferedOutputStream
+import java.util.concurrent.atomic.AtomicInteger
+
+fun main(args: Array<String>) {
+    MandelbrotConv.execute(args)
+}
 
 object MandelbrotConv {
     internal var out: Array<ByteArray> = arrayOf()

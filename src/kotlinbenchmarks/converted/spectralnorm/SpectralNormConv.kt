@@ -3,6 +3,10 @@ package kotlinbenchmarks.converted.spectralnorm
 import java.text.DecimalFormat
 import java.util.concurrent.CyclicBarrier
 
+fun main(args: Array<String>) {
+    SpectralNormConv.execute(args)
+}
+
 object SpectralNormConv {
     private val formatter = DecimalFormat("#.000000000")
 

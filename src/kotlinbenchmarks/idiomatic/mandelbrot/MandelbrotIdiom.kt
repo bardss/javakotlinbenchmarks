@@ -1,7 +1,11 @@
 package kotlinbenchmarks.idiomatic.mandelbrot
 
-import java.io.*
-import java.util.concurrent.atomic.*
+import java.io.BufferedOutputStream
+import java.util.concurrent.atomic.AtomicInteger
+
+fun main(args: Array<String>) {
+    MandelbrotIdiom.execute(args)
+}
 
 object MandelbrotIdiom {
     private var out: Array<ByteArray> = arrayOf()
@@ -53,7 +57,7 @@ object MandelbrotIdiom {
         }
     }
 
-    fun main(args: Array<String>) {
+    fun execute(args: Array<String>) {
         var N = 6000
         if (args.isNotEmpty()) N = args[0].toInt()
 

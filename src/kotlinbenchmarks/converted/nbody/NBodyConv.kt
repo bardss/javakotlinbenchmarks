@@ -1,5 +1,9 @@
 package kotlinbenchmarks.converted.nbody
 
+fun main(args: Array<String>) {
+    NBodyConv.execute(args)
+}
+
 object NBodyConv {
     @JvmStatic
     fun execute(args: Array<String>) {

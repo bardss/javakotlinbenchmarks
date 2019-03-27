@@ -3,12 +3,17 @@ package kotlinbenchmarks.idiomatic.binarytrees
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
 
+fun main(args: Array<String>) {
+    BinaryTreesIdiom.execute(args)
+}
+
 object BinaryTreesIdiom {
 
     private const val MIN_DEPTH = 4
     private val EXECUTOR_SERVICE by lazy { Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors()) }
 
-    fun main(args: Array<String>) {
+    @JvmStatic
+    fun execute(args: Array<String>) {
         var n = 0
         if (args.isNotEmpty()) {
             n = args[0].toInt()
