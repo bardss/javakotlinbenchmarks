@@ -3,10 +3,14 @@ package kotlinbenchmarks.idiomatic.spectralnorm
 import java.text.DecimalFormat
 import java.util.concurrent.CyclicBarrier
 
+fun main(args: Array<String>) {
+    SpectralNormIdiom.execute(args)
+}
+
 object SpectralNormIdiom {
     private val formatter = DecimalFormat("#.000000000")
 
-    fun main(args: Array<String>) {
+    fun execute(args: Array<String>) {
         var n = 1000
         if (args.isNotEmpty()) n = args[0].toInt()
 

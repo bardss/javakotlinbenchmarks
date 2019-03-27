@@ -1,7 +1,11 @@
 package kotlinbenchmarks.idiomatic.nbody
 
+fun main(args: Array<String>) {
+    NBodyIdiom.execute(args)
+}
+
 object NBodyIdiom {
-    fun main(args: Array<String>) {
+    fun execute(args: Array<String>) {
         val n = args[0].toInt()
 
         val bodies = NBodySystem()

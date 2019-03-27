@@ -12,8 +12,9 @@ package javabenchmarks.mandelbrot;
  */
 
 
-import java.io.*;
-import java.util.concurrent.atomic.*;
+import java.io.BufferedOutputStream;
+import java.io.OutputStream;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public final class Mandelbrot {
     static byte[][] out;

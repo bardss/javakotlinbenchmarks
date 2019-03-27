@@ -3,6 +3,10 @@ package kotlinbenchmarks.converted.binarytrees
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
 
+fun main(args: Array<String>) {
+    BinaryTreesConv.execute(args)
+}
+
 object BinaryTreesConv {
 
     private val MIN_DEPTH = 4

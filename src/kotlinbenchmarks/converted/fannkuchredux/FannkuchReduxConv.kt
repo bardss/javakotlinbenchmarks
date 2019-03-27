@@ -2,6 +2,10 @@ package kotlinbenchmarks.converted.fannkuchredux
 
 import java.util.concurrent.atomic.AtomicInteger
 
+fun main(args: Array<String>) {
+    FannkuchReduxConv.execute(args)
+}
+
 class FannkuchReduxConv : Runnable {
 
     internal var p: IntArray = intArrayOf()

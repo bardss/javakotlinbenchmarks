@@ -5,6 +5,10 @@ import java.io.OutputStream
 import java.util.concurrent.ArrayBlockingQueue
 import java.util.concurrent.atomic.AtomicInteger
 
+fun main(args: Array<String>) {
+    FastaConv.execute(args)
+}
+
 object FastaConv {
 
     internal val LINE_LENGTH = 60
