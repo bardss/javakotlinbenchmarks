@@ -11,7 +11,7 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class fastaJava {
+public class fastajava {
 
     static final int LINE_LENGTH = 60;
     static final int LINE_COUNT = 1024;

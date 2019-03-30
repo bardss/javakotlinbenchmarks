@@ -8,7 +8,7 @@
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-public final class fannkuchreduxJava implements Runnable {
+public final class fannkuchreduxjava implements Runnable {
     private static final int NCHUNKS = 150;
     private static int CHUNKSZ;
     private static int NTASKS;
@@ -149,7 +149,7 @@ public final class fannkuchreduxJava implements Runnable {
         int nthreads = Runtime.getRuntime().availableProcessors();
         Thread[] threads = new Thread[nthreads];
         for (int i = 0; i < nthreads; ++i) {
-            threads[i] = new Thread(new fannkuchreduxJava());
+            threads[i] = new Thread(new fannkuchreduxjava());
             threads[i].start();
         }
         for (Thread t : threads) {

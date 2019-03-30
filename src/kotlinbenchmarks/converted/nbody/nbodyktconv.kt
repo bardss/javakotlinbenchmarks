@@ -1,10 +1,10 @@
 package kotlinbenchmarks.converted.nbody
 
 fun main(args: Array<String>) {
-    NBodyKtConv.execute(args)
+    nbodyktconv.execute(args)
 }
 
-object NBodyKtConv {
+object nbodyktconv {
     @JvmStatic
     fun execute(args: Array<String>) {
         val n = Integer.parseInt(args[0])

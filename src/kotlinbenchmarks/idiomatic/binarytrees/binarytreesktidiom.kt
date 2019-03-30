@@ -4,10 +4,10 @@ import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
 
 fun main(args: Array<String>) {
-    binarytreesKtIdiom.execute(args)
+    binarytreesktidiom.execute(args)
 }
 
-object binarytreesKtIdiom {
+object binarytreesktidiom {
 
     private const val MIN_DEPTH = 4
     private val EXECUTOR_SERVICE by lazy { Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors()) }

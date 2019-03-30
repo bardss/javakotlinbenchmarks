@@ -14,7 +14,7 @@ import java.io.BufferedOutputStream;
 import java.io.OutputStream;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public final class mandelbrotJava {
+public final class mandelbrotjava {
     static byte[][] out;
     static AtomicInteger yCt;
     static double[] Crb;

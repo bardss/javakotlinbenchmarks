@@ -7,7 +7,7 @@
    modified slightly by Tagir Valeev
 */
 
-public final class nbodyJava {
+public final class nbodyjava {
     public static void main(String[] args) {
         int n = Integer.parseInt(args[0]);
 

@@ -3,10 +3,10 @@ package kotlinbenchmarks.converted.fannkuchredux
 import java.util.concurrent.atomic.AtomicInteger
 
 fun main(args: Array<String>) {
-    fannkuchreduxKtConv.execute(args)
+    fannkuchreduxktconv.execute(args)
 }
 
-class fannkuchreduxKtConv : Runnable {
+class fannkuchreduxktconv : Runnable {
 
     internal var p: IntArray = intArrayOf()
     internal var pp: IntArray = intArrayOf()
@@ -160,7 +160,7 @@ class fannkuchreduxKtConv : Runnable {
             val nthreads = Runtime.getRuntime().availableProcessors()
             val threads = arrayOfNulls<Thread>(nthreads)
             for (i in 0 until nthreads) {
-                threads[i] = Thread(fannkuchreduxKtConv())
+                threads[i] = Thread(fannkuchreduxktconv())
                 threads[i]!!.start()
             }
             for (t in threads) {

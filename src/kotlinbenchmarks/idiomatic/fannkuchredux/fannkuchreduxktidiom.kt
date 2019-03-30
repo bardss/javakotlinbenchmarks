@@ -3,10 +3,10 @@ package kotlinbenchmarks.idiomatic.fannkuchredux
 import java.util.concurrent.atomic.AtomicInteger
 
 fun main(args: Array<String>) {
-    fannkuchreduxKtIdiom.execute(args)
+    fannkuchreduxktidiom.execute(args)
 }
 
-class fannkuchreduxKtIdiom : Runnable {
+class fannkuchreduxktidiom : Runnable {
 
     private var p = intArrayOf()
     private var pp = intArrayOf()
@@ -152,7 +152,7 @@ class fannkuchreduxKtIdiom : Runnable {
             val nthreads = Runtime.getRuntime().availableProcessors()
             val threads = arrayOfNulls<Thread>(nthreads)
             for (i in 0 until nthreads) {
-                threads[i] = Thread(fannkuchreduxKtIdiom())
+                threads[i] = Thread(fannkuchreduxktidiom())
                 threads[i]?.start()
             }
             threads.filterNotNull().forEach { thread ->

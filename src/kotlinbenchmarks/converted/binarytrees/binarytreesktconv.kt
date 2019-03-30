@@ -4,10 +4,10 @@ import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
 
 fun main(args: Array<String>) {
-    binarytreesKtConv.execute(args)
+    binarytreesktconv.execute(args)
 }
 
-object binarytreesKtConv {
+object binarytreesktconv {
 
     private val MIN_DEPTH = 4
     private val EXECUTOR_SERVICE = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors())

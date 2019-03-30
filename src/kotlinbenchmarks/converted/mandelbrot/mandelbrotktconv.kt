@@ -1,19 +1,19 @@
-package kotlinbenchmarks.idiomatic.mandelbrot
+package kotlinbenchmarks.converted.mandelbrot
 
 import java.io.BufferedOutputStream
 import java.util.concurrent.atomic.AtomicInteger
 
 fun main(args: Array<String>) {
-    mandelbrotKtIdiom.execute(args)
+    mandelbrotktconv.execute(args)
 }
 
-object mandelbrotKtIdiom {
-    private var out: Array<ByteArray> = arrayOf()
-    private var yCt = AtomicInteger()
-    private var Crb = doubleArrayOf()
-    private var Cib = doubleArrayOf()
+object mandelbrotktconv {
+    internal var out: Array<ByteArray> = arrayOf()
+    internal var yCt: AtomicInteger = AtomicInteger()
+    internal var Crb: DoubleArray = doubleArrayOf()
+    internal var Cib: DoubleArray = doubleArrayOf()
 
-    private fun getByte(x: Int, y: Int): Int {
+    internal fun getByte(x: Int, y: Int): Int {
         var res = 0
         var i = 0
         while (i < 8) {
@@ -52,14 +52,15 @@ object mandelbrotKtIdiom {
     }
 
     internal fun putLine(y: Int, line: ByteArray) {
-        line.indices.forEach { index ->
-            line[index] = getByte(index * 8, y).toByte()
-        }
+        for (xb in line.indices)
+            line[xb] = getByte(xb * 8, y).toByte()
     }
 
+    @Throws(Exception::class)
+    @JvmStatic
     fun execute(args: Array<String>) {
         var N = 6000
-        if (args.isNotEmpty()) N = args[0].toInt()
+        if (args.size >= 1) N = Integer.parseInt(args[0])
 
         Crb = DoubleArray(N + 7)
         Cib = DoubleArray(N + 7)
@@ -82,14 +83,12 @@ object mandelbrotKtIdiom {
                     }
                 }
             }
-        pool.filterNotNull().forEach { thread ->
-            thread.start()
-            thread.join()
-        }
+        for (t in pool) t!!.start()
+        for (t in pool) t!!.join()
 
-        BufferedOutputStream(System.out).apply {
-            write("P4\n$N $N\n".toByteArray())
-            for (i in 0 until N) write(out[i])
-        }.close()
+        val stream = BufferedOutputStream(System.out)
+        stream.write("P4\n$N $N\n".toByteArray())
+        for (i in 0 until N) stream.write(out[i])
+        stream.close()
     }
 }

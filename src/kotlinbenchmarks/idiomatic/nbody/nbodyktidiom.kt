@@ -1,10 +1,10 @@
 package kotlinbenchmarks.idiomatic.nbody
 
 fun main(args: Array<String>) {
-    NBodyKtIdiom.execute(args)
+    nbodyktidiom.execute(args)
 }
 
-object NBodyKtIdiom {
+object nbodyktidiom {
     fun execute(args: Array<String>) {
         val n = args[0].toInt()
 
