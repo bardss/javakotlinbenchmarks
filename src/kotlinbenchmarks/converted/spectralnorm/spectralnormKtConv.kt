@@ -4,10 +4,10 @@ import java.text.DecimalFormat
 import java.util.concurrent.CyclicBarrier
 
 fun main(args: Array<String>) {
-    SpectralNormConv.execute(args)
+    spectralnormKtConv.execute(args)
 }
 
-object SpectralNormConv {
+object spectralnormKtConv {
     private val formatter = DecimalFormat("#.000000000")
 
     @JvmStatic

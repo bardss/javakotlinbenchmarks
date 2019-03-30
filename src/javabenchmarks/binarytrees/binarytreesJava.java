@@ -1,5 +1,3 @@
-package javabenchmarks.binarytrees;
-
 /**
  * The Computer Language Benchmarks Game
  * https://salsa.debian.org/benchmarksgame-team/benchmarksgame/
@@ -13,13 +11,13 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-public class BinaryTrees {
+public class binarytreesJava {
 
     private static final int MIN_DEPTH = 4;
     private static final ExecutorService EXECUTOR_SERVICE =
             Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
 
-    public static void execute(final String[] args) throws Exception {
+    public static void main(final String[] args) throws Exception {
         int n = 0;
         if (0 < args.length) {
             n = Integer.parseInt(args[0]);

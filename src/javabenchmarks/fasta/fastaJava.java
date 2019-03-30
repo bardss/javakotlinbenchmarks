@@ -5,15 +5,13 @@
  * modified by Mehmet D. AKIN
  * modified by Daryl Griffith
  */
-package javabenchmarks.fasta;
-
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Fasta {
+public class fastaJava {
 
     static final int LINE_LENGTH = 60;
     static final int LINE_COUNT = 1024;
@@ -31,7 +29,7 @@ public class Fasta {
     static final float ONE_OVER_IM = 1f / IM;
     static int last = 42;
 
-    public static void execute(String[] args) {
+    public static void main(String[] args) {
         int n = 1000;
 
         if (args.length > 0) {

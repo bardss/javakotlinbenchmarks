@@ -6,10 +6,10 @@ import java.util.concurrent.ArrayBlockingQueue
 import java.util.concurrent.atomic.AtomicInteger
 
 fun main(args: Array<String>) {
-    FastaIdiom.execute(args)
+    fastaKtIdiom.execute(args)
 }
 
-object FastaIdiom {
+object fastaKtIdiom {
 
     private val LINE_LENGTH = 60
     private val LINE_COUNT = 1024

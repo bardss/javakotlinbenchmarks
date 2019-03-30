@@ -1,5 +1,3 @@
-package javabenchmarks.fannkuchredux;
-
 /*
  * The Computer Language Benchmarks Game
  * https://salsa.debian.org/benchmarksgame-team/benchmarksgame/
@@ -10,7 +8,7 @@ package javabenchmarks.fannkuchredux;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-public final class FannkuchRedux implements Runnable {
+public final class fannkuchreduxJava implements Runnable {
     private static final int NCHUNKS = 150;
     private static int CHUNKSZ;
     private static int NTASKS;
@@ -125,7 +123,7 @@ public final class FannkuchRedux implements Runnable {
         System.out.println(chk + "\nPfannkuchen(" + n + ") = " + res);
     }
 
-    public static void execute(String[] args) {
+    public static void main(String[] args) {
         n = args.length > 0 ? Integer.parseInt(args[0]) : 12;
         if (n < 0 || n > 12) {         // 13! won't fit into int
             printResult(n, -1, -1);
@@ -151,7 +149,7 @@ public final class FannkuchRedux implements Runnable {
         int nthreads = Runtime.getRuntime().availableProcessors();
         Thread[] threads = new Thread[nthreads];
         for (int i = 0; i < nthreads; ++i) {
-            threads[i] = new Thread(new FannkuchRedux());
+            threads[i] = new Thread(new fannkuchreduxJava());
             threads[i].start();
         }
         for (Thread t : threads) {

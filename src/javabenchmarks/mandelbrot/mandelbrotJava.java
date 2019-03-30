@@ -1,5 +1,3 @@
-package javabenchmarks.mandelbrot;
-
 /* The Computer Language Benchmarks Game
  * https://salsa.debian.org/benchmarksgame-team/benchmarksgame/
  *
@@ -16,7 +14,7 @@ import java.io.BufferedOutputStream;
 import java.io.OutputStream;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public final class Mandelbrot {
+public final class mandelbrotJava {
     static byte[][] out;
     static AtomicInteger yCt;
     static double[] Crb;
@@ -54,7 +52,7 @@ public final class Mandelbrot {
             line[xb]=(byte)getByte(xb*8,y);
     }
 
-    public static void execute(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
         int N=6000;
         if (args.length>=1) N=Integer.parseInt(args[0]);
 

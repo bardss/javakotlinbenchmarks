@@ -1,5 +1,3 @@
-package javabenchmarks.spectralnorm;
-
 /*
 The Computer Language Benchmarks Game
 https://salsa.debian.org/benchmarksgame-team/benchmarksgame/
@@ -13,10 +11,10 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.concurrent.CyclicBarrier;
 
-public class SpectralNorm {
+public class spectralnormJava {
     private static final NumberFormat formatter = new DecimalFormat("#.000000000");
 
-    public static void execute(String[] args) {
+    public static void main(String[] args) {
         int n = 1000;
         if (args.length > 0) n = Integer.parseInt(args[0]);
 

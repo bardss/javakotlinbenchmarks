@@ -6,10 +6,10 @@ import java.util.concurrent.ArrayBlockingQueue
 import java.util.concurrent.atomic.AtomicInteger
 
 fun main(args: Array<String>) {
-    FastaConv.execute(args)
+    fastaKtConv.execute(args)
 }
 
-object FastaConv {
+object fastaKtConv {
 
     internal val LINE_LENGTH = 60
     internal val LINE_COUNT = 1024
