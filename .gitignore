@@ -1,8 +1,8 @@
 .DS_Store
 src/.DS_Store
 *.class
-*.jar
 
 \.idea/
 
 \out/
+src/generated/
