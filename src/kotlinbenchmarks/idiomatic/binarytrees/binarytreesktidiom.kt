@@ -1,7 +1,8 @@
 package kotlinbenchmarks.idiomatic.binarytrees
 
-import java.util.concurrent.Executors
-import java.util.concurrent.TimeUnit
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 fun main(args: Array<String>) {
     binarytreesktidiom.execute(args)
@@ -10,7 +11,6 @@ fun main(args: Array<String>) {
 object binarytreesktidiom {
 
     private const val MIN_DEPTH = 4
-    private val EXECUTOR_SERVICE by lazy { Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors()) }
 
     @JvmStatic
     fun execute(args: Array<String>) {
@@ -29,23 +29,22 @@ object binarytreesktidiom {
         val results = arrayOfNulls<String>((maxDepth - MIN_DEPTH) / 2 + 1)
 
         var d = MIN_DEPTH
-        while (d <= maxDepth) {
-            val depth = d
-            EXECUTOR_SERVICE.execute {
-                var check = 0
+        runBlocking {
+            while (d <= maxDepth) {
+                val depth = d
+                GlobalScope.launch {
+                    var check = 0
 
-                val iterations = 1 shl maxDepth - depth + MIN_DEPTH
-                for (i in 1..iterations) {
-                    val treeNode1 = bottomUpTree(depth)
-                    check += treeNode1.itemCheck()
+                    val iterations = 1 shl maxDepth - depth + MIN_DEPTH
+                    for (i in 1..iterations) {
+                        val treeNode1 = bottomUpTree(depth)
+                        check += treeNode1.itemCheck()
+                    }
+                    results[(depth - MIN_DEPTH) / 2] = "$iterations \t trees of depth $depth \t check: $check"
                 }
-                results[(depth - MIN_DEPTH) / 2] = "$iterations \t trees of depth $depth \t check: $check"
+                d += 2
             }
-            d += 2
         }
-
-        EXECUTOR_SERVICE.shutdown()
-        EXECUTOR_SERVICE.awaitTermination(120L, TimeUnit.SECONDS)
 
         results.forEach {
             println(it)
