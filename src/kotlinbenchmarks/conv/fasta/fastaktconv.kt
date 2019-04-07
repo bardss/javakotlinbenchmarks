@@ -1,4 +1,4 @@
-package kotlinbenchmarks.idiomatic.fasta
+package kotlinbenchmarks.conv.fasta
 
 import java.io.IOException
 import java.io.OutputStream
@@ -6,38 +6,38 @@ import java.util.concurrent.ArrayBlockingQueue
 import java.util.concurrent.atomic.AtomicInteger
 
 fun main(args: Array<String>) {
-    fastaktidiom.execute(args)
+    fastaktconv.execute(args)
 }
 
-object fastaktidiom {
+object fastaktconv {
 
-    private val LINE_LENGTH = 60
-    private val LINE_COUNT = 1024
-    private val WORKERS = arrayOfNulls<NucleotideSelector>(
+    internal val LINE_LENGTH = 60
+    internal val LINE_COUNT = 1024
+    internal val WORKERS = arrayOfNulls<NucleotideSelector>(
             if (Runtime.getRuntime().availableProcessors() > 1)
                 Runtime.getRuntime().availableProcessors() - 1
             else
                 1)
-    private val IN = AtomicInteger()
-    private val OUT = AtomicInteger()
-    private val BUFFERS_IN_PLAY = 6
-    private val IM = 139968
-    private val IA = 3877
-    private val IC = 29573
-    private val ONE_OVER_IM = 1f / IM
-    private var last = 42
+    internal val IN = AtomicInteger()
+    internal val OUT = AtomicInteger()
+    internal val BUFFERS_IN_PLAY = 6
+    internal val IM = 139968
+    internal val IA = 3877
+    internal val IC = 29573
+    internal val ONE_OVER_IM = 1f / IM
+    internal var last = 42
 
+    @JvmStatic
     fun execute(args: Array<String>) {
         var n = 1000
 
-        if (args.isNotEmpty()) {
-            n = args[0].toInt()
+        if (args.size > 0) {
+            n = Integer.parseInt(args[0])
         }
-        WORKERS.indices.forEach { i ->
-            WORKERS[i] = NucleotideSelector().apply {
-                isDaemon = true
-                start()
-            }
+        for (i in WORKERS.indices) {
+            WORKERS[i] = NucleotideSelector()
+            WORKERS[i]?.setDaemon(true)
+            WORKERS[i]?.start()
         }
         try {
             System.out.use { writer ->
@@ -136,8 +136,8 @@ object fastaktidiom {
     private fun writeBuffer(writer: OutputStream) {
         writer.write(
                 WORKERS[IN.incrementAndGet() % WORKERS.size]
-                        ?.take()
-                        ?.nucleotides)
+                        ?.take()!!
+                        .nucleotides)
     }
 
     class NucleotideSelector : Thread() {
@@ -179,7 +179,7 @@ object fastaktidiom {
 
     abstract class AbstractBuffer(internal val LINE_LENGTH: Int, nChars: Int) {
         internal val LINE_COUNT: Int
-        internal var chars = byteArrayOf()
+        internal var chars: ByteArray? = null
         internal val nucleotides: ByteArray
         internal val CHARS_LEFTOVER: Int
 
@@ -202,9 +202,9 @@ object fastaktidiom {
         abstract fun selectNucleotides()
     }
 
-    class AluBuffer(lineLength: Int, private val nChars: Int, offset: Int) : AbstractBuffer(lineLength, nChars) {
+    class AluBuffer(lineLength: Int, internal val nChars: Int, offset: Int) : AbstractBuffer(lineLength, nChars) {
 
-        private val ALU = (
+        internal val ALU = (
                 "GGCCGGGCGCGGTGGCTCACGCCTGTAATCCCAGCACTTTGG"
                         + "GAGGCCGAGGCGGGCGGATCACCTGAGGTCAGGAGTTCGAGA"
                         + "CCAGCCTGGCCAACATGGTGAAACCCCGTCTCTACTAAAAAT"
@@ -212,10 +212,10 @@ object fastaktidiom {
                         + "GCTACTCGGGAGGCTGAGGCAGGAGAATCGCTTGAACCCGGG"
                         + "AGGCGGAGGTTGCAGTGAGCCGAGATCGCGCCACTGCACTCC"
                         + "AGCCTGGGCGACAGAGCGAGACTCCGTCTCAAAAA")
-        private val MAX_ALU_INDEX = ALU.length - LINE_LENGTH
-        private val ALU_ADJUST = LINE_LENGTH - ALU.length
-        private var charIndex: Int = 0
-        private var nucleotideIndex: Int = 0
+        internal val MAX_ALU_INDEX = ALU.length - LINE_LENGTH
+        internal val ALU_ADJUST = LINE_LENGTH - ALU.length
+        internal var charIndex: Int = 0
+        internal var nucleotideIndex: Int = 0
 
         init {
             chars = (ALU + ALU.substring(0, LINE_LENGTH)).toByteArray()
@@ -234,7 +234,7 @@ object fastaktidiom {
         }
 
         private fun ALUFillLine(charCount: Int) {
-            System.arraycopy(chars, charIndex, nucleotides, nucleotideIndex, charCount)
+            System.arraycopy(chars!!, charIndex, nucleotides, nucleotideIndex, charCount)
             charIndex += if (charIndex < MAX_ALU_INDEX) charCount else ALU_ADJUST
             nucleotideIndex += charCount + 1
         }
@@ -242,13 +242,13 @@ object fastaktidiom {
 
     class Buffer(isIUB: Boolean, lineLength: Int, nChars: Int) : AbstractBuffer(lineLength, nChars) {
 
-        private val iubChars = byteArrayOf('a'.toByte(), 'c'.toByte(), 'g'.toByte(), 't'.toByte(), 'B'.toByte(), 'D'.toByte(), 'H'.toByte(), 'K'.toByte(), 'M'.toByte(), 'N'.toByte(), 'R'.toByte(), 'S'.toByte(), 'V'.toByte(), 'W'.toByte(), 'Y'.toByte())
-        private val iubProbs = doubleArrayOf(0.27, 0.12, 0.12, 0.27, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02)
-        private val sapienChars = byteArrayOf('a'.toByte(), 'c'.toByte(), 'g'.toByte(), 't'.toByte())
-        private val sapienProbs = doubleArrayOf(0.3029549426680, 0.1979883004921, 0.1975473066391, 0.3015094502008)
-        private val probs: FloatArray
-        val randoms: FloatArray
-        private val charsInFullLines: Int
+        internal val iubChars = byteArrayOf('a'.toByte(), 'c'.toByte(), 'g'.toByte(), 't'.toByte(), 'B'.toByte(), 'D'.toByte(), 'H'.toByte(), 'K'.toByte(), 'M'.toByte(), 'N'.toByte(), 'R'.toByte(), 'S'.toByte(), 'V'.toByte(), 'W'.toByte(), 'Y'.toByte())
+        internal val iubProbs = doubleArrayOf(0.27, 0.12, 0.12, 0.27, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02)
+        internal val sapienChars = byteArrayOf('a'.toByte(), 'c'.toByte(), 'g'.toByte(), 't'.toByte())
+        internal val sapienProbs = doubleArrayOf(0.3029549426680, 0.1979883004921, 0.1975473066391, 0.3015094502008)
+        internal val probs: FloatArray
+        internal val randoms: FloatArray
+        internal val charsInFullLines: Int
 
         init {
             var cp = 0.0
@@ -266,12 +266,14 @@ object fastaktidiom {
         }
 
         override fun selectNucleotides() {
-            var i = 0
-            var j = 0
+            var i: Int
+            var j: Int
             var m: Int
             var r: Float
             var k: Int
 
+            i = 0
+            j = 0
             while (i < charsInFullLines) {
                 k = 0
                 while (k < LINE_LENGTH) {
@@ -280,7 +282,7 @@ object fastaktidiom {
                     while (probs[m] < r) {
                         m++
                     }
-                    nucleotides[j++] = chars[m]
+                    nucleotides[j++] = chars!![m]
                     k++
                 }
                 j++
@@ -292,7 +294,7 @@ object fastaktidiom {
                 while (probs[m] < r) {
                     m++
                 }
-                nucleotides[j++] = chars[m]
+                nucleotides[j++] = chars!![m]
                 k++
             }
         }

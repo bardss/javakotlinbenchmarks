@@ -1,7 +1,8 @@
-package kotlinbenchmarks.idiomatic.spectralnorm
+package kotlinbenchmarks.idiom.spectralnorm
 
 import java.text.DecimalFormat
 import java.util.concurrent.CyclicBarrier
+import kotlin.math.sqrt
 
 fun main(args: Array<String>) {
     spectralnormktidiom.execute(args)
@@ -57,11 +58,17 @@ object spectralnormktidiom {
 
         }
 
-        return Math.sqrt(vBv / vv)
+        return sqrt(vBv / vv)
     }
 
 
-    private class Approximate(private val _u: DoubleArray, private val _v: DoubleArray, private val _tmp: DoubleArray, private val range_begin: Int, private val range_end: Int) : Thread() {
+    private class Approximate(
+            private val _u: DoubleArray,
+            private val _v: DoubleArray,
+            private val _tmp: DoubleArray,
+            private val range_begin: Int,
+            private val range_end: Int
+    ) : Thread() {
         var m_vBv = 0.0
         var m_vv = 0.0
 

@@ -1,34 +1,29 @@
-package kotlinbenchmarks.converted.fannkuchredux
+package kotlinbenchmarks.idiom.fannkuchredux
 
 import java.util.concurrent.atomic.AtomicInteger
+import kotlin.math.max
+import kotlin.math.min
 
 fun main(args: Array<String>) {
-    fannkuchreduxktconv.execute(args)
+    fannkuchreduxktidiom.execute(args)
 }
 
-class fannkuchreduxktconv : Runnable {
+class fannkuchreduxktidiom : Runnable {
 
-    internal var p: IntArray = intArrayOf()
-    internal var pp: IntArray = intArrayOf()
-    internal var count: IntArray = intArrayOf()
+    private var p = intArrayOf()
+    private var pp = intArrayOf()
+    private var count = intArrayOf()
 
-    internal fun print() {
-        for (i in p.indices) {
-            print(p[i] + 1)
-        }
-        println()
-    }
-
-    internal fun firstPermutation(idx: Int) {
-        var idx = idx
+    private fun firstPermutation(idxArg: Int) {
+        var idx = idxArg
         for (i in p.indices) {
             p[i] = i
         }
 
         for (i in count.size - 1 downTo 1) {
-            val d = idx / Fact!![i]
+            val d = idx / Fact[i]
             count[i] = d
-            idx = idx % Fact!![i]
+            idx %= Fact[i]
 
             System.arraycopy(p, 0, pp, 0, i + 1)
             for (j in 0..i) {
@@ -37,7 +32,7 @@ class fannkuchreduxktconv : Runnable {
         }
     }
 
-    internal fun nextPermutation(): Boolean {
+    private fun nextPermutation(): Boolean {
         var first = p[1]
         p[1] = p[0]
         p[0] = first
@@ -56,7 +51,7 @@ class fannkuchreduxktconv : Runnable {
         return true
     }
 
-    internal fun countFlips(): Int {
+    private fun countFlips(): Int {
         var flips = 1
         var first = p[0]
         if (p[first] != 0) {
@@ -80,9 +75,9 @@ class fannkuchreduxktconv : Runnable {
         return flips
     }
 
-    internal fun runTask(task: Int) {
+    private fun runTask(task: Int) {
         val idxMin = task * CHUNKSZ
-        val idxMax = Math.min(Fact!![n], idxMin + CHUNKSZ)
+        val idxMax = min(Fact[n], idxMin + CHUNKSZ)
 
         firstPermutation(idxMin)
 
@@ -93,7 +88,7 @@ class fannkuchreduxktconv : Runnable {
 
             if (p[0] != 0) {
                 val flips = countFlips()
-                maxflips = Math.max(maxflips, flips)
+                maxflips = max(maxflips, flips)
                 chksum += if (i % 2 == 0) flips else -flips
             }
 
@@ -103,8 +98,8 @@ class fannkuchreduxktconv : Runnable {
 
             nextPermutation()
         }
-        maxFlips!![task] = maxflips
-        chkSums!![task] = chksum
+        maxFlips[task] = maxflips
+        chkSums[task] = chksum
     }
 
     override fun run() {
@@ -112,10 +107,10 @@ class fannkuchreduxktconv : Runnable {
         pp = IntArray(n)
         count = IntArray(n)
 
-        var task: Int = taskId!!.getAndIncrement()
-        while (task < NTASKS) {
+        var task: Int? = taskId.getAndIncrement()
+        while (task != null && task < NTASKS) {
             runTask(task)
-            task = taskId!!.getAndIncrement()
+            task = taskId.getAndIncrement()
         }
     }
 
@@ -124,19 +119,18 @@ class fannkuchreduxktconv : Runnable {
         private var CHUNKSZ: Int = 0
         private var NTASKS: Int = 0
         private var n: Int = 0
-        private var Fact: IntArray? = null
-        private var maxFlips: IntArray? = null
-        private var chkSums: IntArray? = null
-        private var taskId: AtomicInteger? = null
+        private var Fact = intArrayOf()
+        private var maxFlips  = intArrayOf()
+        private var chkSums = intArrayOf()
+        private var taskId = AtomicInteger()
 
-        internal fun printResult(n: Int, res: Int, chk: Int) {
-            println(chk.toString() + "\nPfannkuchen(" + n + ") = " + res)
+        private fun printResult(n: Int, res: Int, chk: Int) {
+            println("$chk \nPfannkuchen($n) = $res")
         }
 
-        @JvmStatic
         fun execute(args: Array<String>) {
-            n = if (args.size > 0) Integer.parseInt(args[0]) else 12
-            if (n < 0 || n > 12) {         // 13! won't fit into int
+            n = if (args.isNotEmpty()) args[0].toInt() else 12
+            if (n < 0 || n > 12) {
                 printResult(n, -1, -1)
                 return
             }
@@ -146,13 +140,13 @@ class fannkuchreduxktconv : Runnable {
             }
 
             Fact = IntArray(n + 1)
-            Fact!![0] = 1
-            for (i in 1 until Fact!!.size) {
-                Fact!![i] = Fact!![i - 1] * i
+            Fact[0] = 1
+            for (i in 1 until Fact.size) {
+                Fact[i] = Fact[i - 1] * i
             }
 
-            CHUNKSZ = (Fact!![n] + NCHUNKS - 1) / NCHUNKS
-            NTASKS = (Fact!![n] + CHUNKSZ - 1) / CHUNKSZ
+            CHUNKSZ = (Fact[n] + NCHUNKS - 1) / NCHUNKS
+            NTASKS = (Fact[n] + CHUNKSZ - 1) / CHUNKSZ
             maxFlips = IntArray(NTASKS)
             chkSums = IntArray(NTASKS)
             taskId = AtomicInteger(0)
@@ -160,23 +154,19 @@ class fannkuchreduxktconv : Runnable {
             val nthreads = Runtime.getRuntime().availableProcessors()
             val threads = arrayOfNulls<Thread>(nthreads)
             for (i in 0 until nthreads) {
-                threads[i] = Thread(fannkuchreduxktconv())
-                threads[i]!!.start()
+                threads[i] = Thread(fannkuchreduxktidiom())
+                threads[i]?.start()
             }
-            for (t in threads) {
-                try {
-                    t!!.join()
-                } catch (e: InterruptedException) {
-                }
-
+            threads.filterNotNull().forEach { thread ->
+                thread.join()
             }
 
             var res = 0
-            for (v in maxFlips!!) {
-                res = Math.max(res, v)
+            for (v in maxFlips) {
+                res = max(res, v)
             }
             var chk = 0
-            for (v in chkSums!!) {
+            for (v in chkSums) {
                 chk += v
             }
 

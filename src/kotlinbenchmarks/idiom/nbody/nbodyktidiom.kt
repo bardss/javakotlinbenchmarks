@@ -1,4 +1,6 @@
-package kotlinbenchmarks.idiomatic.nbody
+package kotlinbenchmarks.idiom.nbody
+
+import kotlin.math.sqrt
 
 fun main(args: Array<String>) {
     nbodyktidiom.execute(args)
@@ -49,7 +51,7 @@ private class NBodySystem {
                 val dz = iz - jBody.z
 
                 val dSquared = dx * dx + dy * dy + dz * dz
-                val distance = Math.sqrt(dSquared)
+                val distance = sqrt(dSquared)
                 val mag = dt / (dSquared * distance)
 
                 val jMass = jBody.mass
@@ -92,7 +94,7 @@ private class NBodySystem {
                 dy = iBody.y - jBody.y
                 dz = iBody.z - jBody.z
 
-                distance = Math.sqrt(dx * dx + dy * dy + dz * dz)
+                distance = sqrt(dx * dx + dy * dy + dz * dz)
                 e -= iBody.mass * jBody.mass / distance
             }
         }

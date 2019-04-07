@@ -1,4 +1,4 @@
-package kotlinbenchmarks.converted.nbody
+package kotlinbenchmarks.conv.nbody
 
 fun main(args: Array<String>) {
     nbodyktconv.execute(args)

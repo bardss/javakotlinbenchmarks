@@ -1,4 +1,4 @@
-package kotlinbenchmarks.converted.spectralnorm
+package kotlinbenchmarks.conv.spectralnorm
 
 import java.text.DecimalFormat
 import java.util.concurrent.CyclicBarrier

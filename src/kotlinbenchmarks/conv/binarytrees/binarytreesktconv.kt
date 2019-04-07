@@ -1,4 +1,4 @@
-package kotlinbenchmarks.converted.binarytrees
+package kotlinbenchmarks.conv.binarytrees
 
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
