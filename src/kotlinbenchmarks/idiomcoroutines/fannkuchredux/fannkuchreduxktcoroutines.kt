@@ -1,5 +1,8 @@
 package kotlinbenchmarks.idiomcoroutines.fannkuchredux
 
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import java.util.concurrent.atomic.AtomicInteger
 import kotlin.math.max
 import kotlin.math.min
@@ -8,7 +11,7 @@ fun main(args: Array<String>) {
     fannkuchreduxktcoroutines.execute(args)
 }
 
-class fannkuchreduxktcoroutines : Runnable {
+class fannkuchreduxktcoroutines {
 
     private var p = intArrayOf()
     private var pp = intArrayOf()
@@ -102,7 +105,7 @@ class fannkuchreduxktcoroutines : Runnable {
         chkSums[task] = chksum
     }
 
-    override fun run() {
+    fun run() {
         p = IntArray(n)
         pp = IntArray(n)
         count = IntArray(n)
@@ -152,13 +155,12 @@ class fannkuchreduxktcoroutines : Runnable {
             taskId = AtomicInteger(0)
 
             val nthreads = Runtime.getRuntime().availableProcessors()
-            val threads = arrayOfNulls<Thread>(nthreads)
-            for (i in 0 until nthreads) {
-                threads[i] = Thread(fannkuchreduxktcoroutines())
-                threads[i]?.start()
-            }
-            threads.filterNotNull().forEach { thread ->
-                thread.join()
+            runBlocking {
+                for (i in 0 until nthreads * 100) {
+                    launch(Dispatchers.Default) {
+                        fannkuchreduxktcoroutines().run()
+                    }.join()
+                }
             }
 
             var res = 0

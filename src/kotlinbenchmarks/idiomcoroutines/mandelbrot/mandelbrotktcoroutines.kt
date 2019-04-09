@@ -1,13 +1,16 @@
-package kotlinbenchmarks.idiom.mandelbrot
+package kotlinbenchmarks.idiomcoroutines.mandelbrot
 
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import java.io.BufferedOutputStream
 import java.util.concurrent.atomic.AtomicInteger
 
 fun main(args: Array<String>) {
-    mandelbrotktidiom.execute(args)
+    mandelbrotktcoroutines.execute(args)
 }
 
-object mandelbrotktidiom {
+object mandelbrotktcoroutines {
     private var out: Array<ByteArray> = arrayOf()
     private var yCt = AtomicInteger()
     private var Crb = doubleArrayOf()
@@ -71,20 +74,18 @@ object mandelbrotktidiom {
         yCt = AtomicInteger()
         out = Array(N) { ByteArray((N + 7) / 8) }
 
-        val pool = arrayOfNulls<Thread>(2 * Runtime.getRuntime().availableProcessors())
-        for (i in pool.indices)
-            pool[i] = object : Thread() {
-                override fun run() {
+        val pool = arrayOfNulls<Job>(100 * Runtime.getRuntime().availableProcessors())
+        runBlocking {
+            for (i in pool.indices) {
+                pool[i] = launch {
                     var y: Int = yCt.getAndIncrement()
                     while (y < out.size) {
                         putLine(y, out[y])
                         y = yCt.getAndIncrement()
                     }
                 }
+                pool[i]?.join()
             }
-        pool.filterNotNull().forEach { thread ->
-            thread.start()
-            thread.join()
         }
 
         BufferedOutputStream(System.out).apply {
