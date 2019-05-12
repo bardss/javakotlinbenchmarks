@@ -1,5 +1,6 @@
 package kotlinbenchmarks.idiomcoroutines.mandelbrot
 
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -74,17 +75,16 @@ object mandelbrotktcoroutines {
         yCt = AtomicInteger()
         out = Array(N) { ByteArray((N + 7) / 8) }
 
-        val pool = arrayOfNulls<Job>(100 * Runtime.getRuntime().availableProcessors())
+        val pool = arrayOfNulls<Job>(Runtime.getRuntime().availableProcessors())
         runBlocking {
             for (i in pool.indices) {
-                pool[i] = launch {
+                pool[i] = launch(Dispatchers.Default) {
                     var y: Int = yCt.getAndIncrement()
                     while (y < out.size) {
                         putLine(y, out[y])
                         y = yCt.getAndIncrement()
                     }
                 }
-                pool[i]?.join()
             }
         }
 

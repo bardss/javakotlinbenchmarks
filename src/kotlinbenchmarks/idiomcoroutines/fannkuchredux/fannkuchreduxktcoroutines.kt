@@ -156,10 +156,10 @@ class fannkuchreduxktcoroutines {
 
             val nthreads = Runtime.getRuntime().availableProcessors()
             runBlocking {
-                for (i in 0 until nthreads * 100) {
+                for (i in 0 until nthreads) {
                     launch(Dispatchers.Default) {
                         fannkuchreduxktcoroutines().run()
-                    }.join()
+                    }
                 }
             }
 

@@ -1,5 +1,7 @@
 package kotlinbenchmarks.idiomcoroutines.binarytrees
 
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
@@ -31,7 +33,7 @@ object binarytreesktcoroutines {
         runBlocking {
             while (d <= maxDepth) {
                 val depth = d
-                launch {
+                launch(Dispatchers.Default) {
                     var check = 0
 
                     val iterations = 1 shl maxDepth - depth + MIN_DEPTH
