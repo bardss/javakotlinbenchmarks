@@ -1,0 +1,5 @@
+"new","java.text.DecimalFormat",1
+"new","java.util.concurrent.CyclicBarrier",1
+"new","javabenchmarks.spectralnorm.spectralnormjava$Approximate",1
+"newarray","double",3
+"anewarray","javabenchmarks.spectralnorm.spectralnormjava$Approximate",1

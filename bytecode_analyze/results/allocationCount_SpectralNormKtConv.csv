@@ -1,0 +1,7 @@
+"new","java.text.DecimalFormat",1
+"new","java.util.concurrent.CyclicBarrier",1
+"new","kotlinbenchmarks.conv.spectralnorm.spectralnormktconv",1
+"new","kotlinbenchmarks.conv.spectralnorm.spectralnormktconv$Approximate",1
+"new","kotlinbenchmarks.conv.spectralnorm.spectralnormktconv$Approximate$Companion",1
+"newarray","double",3
+"anewarray","kotlinbenchmarks.conv.spectralnorm.spectralnormktconv$Approximate",1

@@ -1,0 +1,12 @@
+"new","kotlin.TypeCastException",4
+"new","kotlinbenchmarks.conv.fasta.fastaktconv$Buffer",3
+"new","java.util.concurrent.ArrayBlockingQueue",2
+"new","java.util.concurrent.atomic.AtomicInteger",2
+"new","kotlinbenchmarks.conv.fasta.fastaktconv$AluBuffer",2
+"new","java.lang.StringBuilder",1
+"new","kotlinbenchmarks.conv.fasta.fastaktconv",1
+"new","kotlinbenchmarks.conv.fasta.fastaktconv$NucleotideSelector",1
+"newarray","byte",3
+"newarray","double",2
+"newarray","float",2
+"anewarray","kotlinbenchmarks.conv.fasta.fastaktconv$NucleotideSelector",1

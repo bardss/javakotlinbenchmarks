@@ -1,0 +1,2 @@
+13:34:30.949 [main] ERROR o.a.jitwatch.loader.BytecodeLoader - could not parse bytecode: '}'
+13:34:30.969 [main] ERROR o.a.jitwatch.loader.BytecodeLoader - could not parse bytecode: '}'

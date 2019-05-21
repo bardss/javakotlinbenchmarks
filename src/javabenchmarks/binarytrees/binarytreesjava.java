@@ -1,3 +1,5 @@
+package javabenchmarks.binarytrees;
+
 /**
  * The Computer Language Benchmarks Game
  * https://salsa.debian.org/benchmarksgame-team/benchmarksgame/

@@ -1,0 +1,17 @@
+"invokevirtual","java.io.OutputStream.write(byte[])",2
+"invokevirtual","java.io.OutputStream.close()",1
+"invokevirtual","java.lang.Runtime.availableProcessors()",1
+"invokevirtual","java.lang.String.getBytes()",1
+"invokevirtual","java.lang.Thread.join()",1
+"invokevirtual","java.lang.Thread.start()",1
+"invokevirtual","java.util.concurrent.atomic.AtomicInteger.getAndIncrement()",1
+"invokespecial","java.io.BufferedOutputStream.<init>(java.io.OutputStream)",1
+"invokespecial","java.lang.Object.<init>()",1
+"invokespecial","java.lang.Thread.<init>()",1
+"invokespecial","java.util.concurrent.atomic.AtomicInteger.<init>()",1
+"invokespecial","javabenchmarks.mandelbrot.mandelbrotjava$1.<init>()",1
+"invokestatic","java.lang.Integer.parseInt(java.lang.String)",1
+"invokestatic","java.lang.Runtime.getRuntime()",1
+"invokestatic","javabenchmarks.mandelbrot.mandelbrotjava.getByte(int,int)",1
+"invokestatic","javabenchmarks.mandelbrot.mandelbrotjava.putLine(int,byte[])",1
+"invokedynamic","javabenchmarks.mandelbrot.mandelbrotjava.makeConcatWithConstants(int,int)",1

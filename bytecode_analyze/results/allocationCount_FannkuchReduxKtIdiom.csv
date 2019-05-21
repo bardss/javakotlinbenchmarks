@@ -1,0 +1,7 @@
+"new","java.util.concurrent.atomic.AtomicInteger",2
+"new","java.lang.StringBuilder",1
+"new","java.lang.Thread",1
+"new","kotlinbenchmarks.idiom.fannkuchredux.fannkuchreduxktidiom",1
+"new","kotlinbenchmarks.idiom.fannkuchredux.fannkuchreduxktidiom$Companion",1
+"newarray","int",12
+"anewarray","java.lang.Thread",1

@@ -1,0 +1,7 @@
+"new","java.lang.StringBuilder",1
+"new","java.lang.Thread",1
+"new","java.util.concurrent.atomic.AtomicInteger",1
+"new","kotlinbenchmarks.conv.fannkuchredux.fannkuchreduxktconv",1
+"new","kotlinbenchmarks.conv.fannkuchredux.fannkuchreduxktconv$Companion",1
+"newarray","int",9
+"anewarray","java.lang.Thread",1

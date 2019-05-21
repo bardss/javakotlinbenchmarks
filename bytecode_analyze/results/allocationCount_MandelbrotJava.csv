@@ -1,0 +1,6 @@
+"new","java.io.BufferedOutputStream",1
+"new","java.util.concurrent.atomic.AtomicInteger",1
+"new","javabenchmarks.mandelbrot.mandelbrotjava$1",1
+"newarray","double",2
+"anewarray","java.lang.Thread",1
+"multianewarray","[[B",1

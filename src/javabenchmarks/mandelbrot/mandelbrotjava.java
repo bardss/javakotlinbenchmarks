@@ -1,3 +1,5 @@
+package javabenchmarks.mandelbrot;
+
 /* The Computer Language Benchmarks Game
  * https://salsa.debian.org/benchmarksgame-team/benchmarksgame/
  *
@@ -8,7 +10,6 @@
  * optimizations and refactoring by Enotus 2010-11-11
  * optimization by John Stalcup 2012-2-19
  */
-
 
 import java.io.BufferedOutputStream;
 import java.io.OutputStream;

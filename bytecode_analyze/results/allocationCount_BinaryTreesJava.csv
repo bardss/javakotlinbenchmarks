@@ -1,0 +1,4 @@
+13:34:15.561 [main] DEBUG o.a.j.model.MemberSignatureParts - Synthetic bridge constructor arg: javabenchmarks.binarytrees.binarytreesjava$1
+13:34:15.567 [main] DEBUG o.a.j.model.MemberSignatureParts - Synthetic bridge constructor arg: javabenchmarks.binarytrees.binarytreesjava$1
+"new","javabenchmarks.binarytrees.binarytreesjava$TreeNode",2
+"anewarray","java.lang.String",1

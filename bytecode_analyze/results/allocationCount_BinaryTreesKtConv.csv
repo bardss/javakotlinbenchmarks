@@ -1,0 +1,7 @@
+13:34:27.162 [main] ERROR o.a.jitwatch.loader.BytecodeLoader - could not parse bytecode: '}'
+13:34:27.199 [main] ERROR o.a.jitwatch.loader.BytecodeLoader - could not parse bytecode: '}'
+"new","java.lang.StringBuilder",3
+"new","kotlinbenchmarks.conv.binarytrees.binarytreesktconv$TreeNode",2
+"new","kotlinbenchmarks.conv.binarytrees.binarytreesktconv",1
+"new","kotlinbenchmarks.conv.binarytrees.binarytreesktconv$execute$1",1
+"anewarray","java.lang.String",1

@@ -1,0 +1,9 @@
+"new","javabenchmarks.fasta.fastajava$Buffer",3
+"new","java.util.concurrent.ArrayBlockingQueue",2
+"new","java.util.concurrent.atomic.AtomicInteger",2
+"new","javabenchmarks.fasta.fastajava$AluBuffer",2
+"new","javabenchmarks.fasta.fastajava$NucleotideSelector",1
+"newarray","byte",3
+"newarray","double",2
+"newarray","float",2
+"anewarray","javabenchmarks.fasta.fastajava$NucleotideSelector",1

@@ -1,0 +1,6 @@
+"new","java.lang.Thread",2
+"new","java.util.concurrent.atomic.AtomicInteger",2
+"new","javabenchmarks.fannkuchredux.FannkuchRedux",1
+"new","javabenchmarks.fannkuchredux.fannkuchreduxjava",1
+"newarray","int",12
+"anewarray","java.lang.Thread",2

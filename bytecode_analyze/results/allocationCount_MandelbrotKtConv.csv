@@ -1,0 +1,10 @@
+"new","java.util.concurrent.atomic.AtomicInteger",2
+"new","java.io.BufferedOutputStream",1
+"new","java.lang.StringBuilder",1
+"new","kotlin.TypeCastException",1
+"new","kotlinbenchmarks.conv.mandelbrot.mandelbrotktconv",1
+"new","kotlinbenchmarks.conv.mandelbrot.mandelbrotktconv$execute$2",1
+"newarray","double",4
+"newarray","byte",1
+"anewarray","[B",2
+"anewarray","java.lang.Thread",1
