@@ -1,5 +1,5 @@
-13:36:43.535 [main] ERROR o.a.jitwatch.loader.BytecodeLoader - could not parse bytecode: '}'
-13:36:43.589 [main] ERROR o.a.jitwatch.loader.BytecodeLoader - could not parse bytecode: '}'
+13:22:32.070 [main] ERROR o.a.jitwatch.loader.BytecodeLoader - could not parse bytecode: '}'
+13:22:32.126 [main] ERROR o.a.jitwatch.loader.BytecodeLoader - could not parse bytecode: '}'
 "new","kotlinbenchmarks.idiom.nbody.Body",5
 "new","kotlinbenchmarks.idiom.nbody.Body$Companion",1
 "new","kotlinbenchmarks.idiom.nbody.NBodySystem",1

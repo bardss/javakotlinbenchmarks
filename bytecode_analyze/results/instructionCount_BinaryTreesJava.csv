@@ -1,5 +1,5 @@
-13:34:17.749 [main] DEBUG o.a.j.model.MemberSignatureParts - Synthetic bridge constructor arg: javabenchmarks.binarytrees.binarytreesjava$1
-13:34:17.757 [main] DEBUG o.a.j.model.MemberSignatureParts - Synthetic bridge constructor arg: javabenchmarks.binarytrees.binarytreesjava$1
+13:21:25.903 [main] DEBUG o.a.j.model.MemberSignatureParts - Synthetic bridge constructor arg: javabenchmarks.binarytrees.binarytreesjava$1
+13:21:25.910 [main] DEBUG o.a.j.model.MemberSignatureParts - Synthetic bridge constructor arg: javabenchmarks.binarytrees.binarytreesjava$1
 aload_0,13
 invokestatic,11
 invokespecial,10

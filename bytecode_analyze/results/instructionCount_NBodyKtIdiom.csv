@@ -1,5 +1,5 @@
-13:36:45.811 [main] ERROR o.a.jitwatch.loader.BytecodeLoader - could not parse bytecode: '}'
-13:36:45.866 [main] ERROR o.a.jitwatch.loader.BytecodeLoader - could not parse bytecode: '}'
+13:22:33.222 [main] ERROR o.a.jitwatch.loader.BytecodeLoader - could not parse bytecode: '}'
+13:22:33.282 [main] ERROR o.a.jitwatch.loader.BytecodeLoader - could not parse bytecode: '}'
 invokevirtual,91
 aload_0,41
 dload,40
