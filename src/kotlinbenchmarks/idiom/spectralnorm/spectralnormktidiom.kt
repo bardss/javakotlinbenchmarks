@@ -38,7 +38,6 @@ object spectralnormktidiom {
         for (i in 0 until nthread) {
             val r1 = i * chunk
             val r2 = if (i < nthread - 1) r1 + chunk else n
-
             ap[i] = Approximate(u, v, tmp, r1, r2)
         }
 
@@ -46,16 +45,11 @@ object spectralnormktidiom {
         var vBv = 0.0
         var vv = 0.0
         for (i in 0 until nthread) {
-            try {
-                ap[i]?.let { approximate ->
-                    approximate.join()
-                    vBv += approximate.m_vBv
-                    vv += approximate.m_vv
-                }
-            } catch (e: Exception) {
-                e.printStackTrace()
+            ap[i]?.let { approximate ->
+                approximate.join()
+                vBv += approximate.m_vBv
+                vv += approximate.m_vv
             }
-
         }
 
         return sqrt(vBv / vv)

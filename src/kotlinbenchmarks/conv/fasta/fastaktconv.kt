@@ -36,8 +36,8 @@ object fastaktconv {
         }
         for (i in WORKERS.indices) {
             WORKERS[i] = NucleotideSelector()
-            WORKERS[i]?.setDaemon(true)
-            WORKERS[i]?.start()
+            WORKERS[i]!!.setDaemon(true)
+            WORKERS[i]!!.start()
         }
         try {
             System.out.use { writer ->
@@ -68,7 +68,7 @@ object fastaktconv {
     }
 
     private fun lineFillALU(buffer: AbstractBuffer) {
-        WORKERS[OUT.incrementAndGet() % WORKERS.size]?.put(buffer)
+        WORKERS[OUT.incrementAndGet() % WORKERS.size]!!.put(buffer)
     }
 
     @Throws(IOException::class)
@@ -76,7 +76,7 @@ object fastaktconv {
         var buffer: AbstractBuffer?
 
         for (i in 0 until buffers) {
-            buffer = WORKERS[IN.incrementAndGet() % WORKERS.size]?.take()
+            buffer = WORKERS[IN.incrementAndGet() % WORKERS.size]!!.take()
             writer.write(buffer!!.nucleotides)
             lineFillALU(buffer)
         }
@@ -103,7 +103,7 @@ object fastaktconv {
             last = (last * IA + IC) % IM
             buffer.randoms[i] = last * ONE_OVER_IM
         }
-        WORKERS[OUT.incrementAndGet() % WORKERS.size]?.put(buffer)
+        WORKERS[OUT.incrementAndGet() % WORKERS.size]!!.put(buffer)
     }
 
     @Throws(IOException::class)
@@ -111,7 +111,7 @@ object fastaktconv {
         var buffer: AbstractBuffer?
 
         for (i in 0 until loops) {
-            buffer = WORKERS[IN.incrementAndGet() % WORKERS.size]?.take()
+            buffer = WORKERS[IN.incrementAndGet() % WORKERS.size]!!.take()
             writer.write(buffer!!.nucleotides)
             lineFillRandom(buffer as Buffer)
         }
@@ -135,8 +135,8 @@ object fastaktconv {
     @Throws(IOException::class)
     private fun writeBuffer(writer: OutputStream) {
         writer.write(
-                WORKERS[IN.incrementAndGet() % WORKERS.size]
-                        ?.take()!!
+                WORKERS[IN.incrementAndGet() % WORKERS.size]!!
+                        .take()!!
                         .nucleotides)
     }
 

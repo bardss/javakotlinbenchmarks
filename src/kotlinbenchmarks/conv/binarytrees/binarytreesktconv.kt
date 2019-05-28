@@ -64,14 +64,12 @@ object binarytreesktconv {
     }
 
     private class TreeNode constructor(private val left: TreeNode? = null, private val right: TreeNode? = null) {
-
         fun itemCheck(): Int {
             // if necessary deallocate here
             return if (null == left) {
                 1
             } else 1 + left.itemCheck() + right!!.itemCheck()
         }
-
     }
 
 }

@@ -168,7 +168,6 @@ class fannkuchreduxktconv : Runnable {
                     t!!.join()
                 } catch (e: InterruptedException) {
                 }
-
             }
 
             var res = 0
