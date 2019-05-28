@@ -1,3 +1,0 @@
-13:36:36.529 [main] ERROR o.a.jitwatch.loader.BytecodeLoader - could not parse bytecode: '}'
-13:36:36.581 [main] ERROR o.a.jitwatch.loader.BytecodeLoader - could not parse bytecode: '}'
-"kotlinbenchmarks.idiom.nbody","NBodySystem","advance","double",343
