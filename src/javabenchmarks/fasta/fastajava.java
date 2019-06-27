@@ -7,6 +7,7 @@ package javabenchmarks.fasta;
  * modified by Mehmet D. AKIN
  * modified by Daryl Griffith
  */
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.concurrent.ArrayBlockingQueue;
