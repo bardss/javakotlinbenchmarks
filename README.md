@@ -1,4 +1,4 @@
-# Comparative evaluation of the performance of Java and Kotlin languages
+# Experimental comparative performance evaluation ofselected constructs in Java and Kotlin
 
 #### Master thesis
 
